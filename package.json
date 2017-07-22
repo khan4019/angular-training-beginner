@@ -1,8 +1,8 @@
 {
-  "name": "reveal.js",
+  "name": "angular-training-beginner",
   "version": "3.5.0",
   "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
+  "homepage": "http://thatjsdude.com",
   "subdomain": "revealjs",
   "main": "js/reveal.js",
   "scripts": {
@@ -11,13 +11,13 @@
     "build": "grunt"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Jhankar Mahbub",
+    "email": "khan4019@gmail.com",
+    "web": "http://thatjsdude.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/khan4019/angular-training-beginner.git"
   },
   "engines": {
     "node": ">=4.0.0"
