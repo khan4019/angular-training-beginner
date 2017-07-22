@@ -194,16 +194,88 @@ const dog = new Dog({ name: 'Bear', breed: 'Border Collie', age: 4 });
 						</code></pre>
 					</section>
 				</section>
-
+				<section>
+					<section>
+						<h2>Data bind and templating</h2>
+					</section>
+					<section>
+						<h2>Types of binding</h2>
+						<pre><code>
+&lt;p&gt; someAttribute="value">&lt;/p&gt;
+						</code></pre>
+						<div class="fragment">
+							<pre><code>
+<p [someAttribute]="someObject"></p>
+							</code></pre>
+						</div>
+						<div class="fragment">
+							<pre><code>
+<p (click)="handleClick()"></p>
+							</code></pre>
+						</div>
+						<div class="fragment">
+							<pre><code>
+<input [(ngModel)]="someModel">
+							</code></pre>
+						</div>
+					</section>
+				</section>
 				<section>
 					<section>
 						<h2>ES6</h2>
 					</section>
 					<section>
+						<h2>imports</h2>
+						<p>Makes the blocks of functionality available in the imported modules available to the contents of this module</p>
 						<pre><code>
 import { Component, OnInit } from '@angular/core';
 import { Dog } from '../dog';
 						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Component</h1>
+					</section>
+					<section>
+						<h2>What is a component</h2>
+						<ul>
+							<li>Building Block</li>
+							<li>Repeating block</li>
+							<li>Component grouped together</li>
+							<li>Large component broken down into pieces</li>
+						</ul>
+						<p class="fragment">ng generate component my-new-component</p>
+					</section>
+					<section>
+						<h2>Open app.component.ts</h2>
+						<pre><code>
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app works!';
+}
+						</code></pre>
+						<ul class="fragment">
+							<li><small>@Component is a decorator that adds metadata to the AppComponent class</small></li>
+							<li><small>selector tells Angular to use this class to fill in uses of <app-root></app-root></small></li>
+							<li><small>templateUrl tells it where to find the HTML to use for filling in</small></li>
+							<li><small>styleUrls is a list of CSS style files to apply to this component</small></li>
+						</ul>						
+					</section>
+					<section>
+						<h2>Types of Component</h2>
+						<ul>
+							<li>Fature Component</li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
 					</section>
 				</section>
 				<section>
@@ -259,23 +331,93 @@ Observable.fromEvent(el, 'mouseover')
 							<li>Do not feel that you need to implement the labs with Angular Material</li>
 						</ul>
 					</section>
+					<section>
+						<h2>Install Material Design</h2>
+					</section>
 				</section>
 
 				<section>
-					
+					<section>
+						<h1>Modules</h1>
+					</section>
+					<section>
+						<ul>
+							<li>central building block of Angular</li>
+							<li>helps organize code into cohesive blocks of functionality</li>
+						</ul>
+					</section>
+					<section>
+						<pre><code>
+import { NgModule } from '@angular/core';
+
+@NgModule({
+  imports: [],
+  declarations: [],
+  bootstrap: []
+})
+						</code></pre>
+					</section>
 				</section>
 
 				
 				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
+					<section>
+						<h1>Pass Data to Component</h1>
+					</section>
+					<section>
+						<h2>Using @Input</h2>
+						<pre><code>
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-say-hello',
+  templateUrl: './hello.component.html'
+})
+export class SayHelloComponent {
+  @Input()
+  public name: string;
+}
+						</code></pre>
+						<pre class="fragment"><code>
+<h3 *ngIf="name">Hello {{name}}!</h3>
+						</code></pre>
+						<pre class="fragment"><code>
+<app-say-hello name="John"></app-say-hello>
+						</code></pre>
+					</section>
+					<section>
+						<h2>@Output</h2>
+						<ul>
+							<li>A decorator used to handle "custom" events</li>
+							<li>Similar to & callback binding in AngularJS</li>
+						</ul>
+					</section>
+					<section>
+						<h2>@output</h2>
+						<pre><code>
+import { Component, EventEmitter, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-dog-list',
+  templateUrl: './dog-list.component.html'
+})
+export class DogListComponent {
+  @Output()
+  public add: new EventEmitter();
+
+  @Input()
+  public dogs: IDog[] = [];
+
+  addDog(dog: IDog) {
+    this.dogs.push(dog);
+    this.add.emit(dog);
+  }
+}
+						</code></pre>
+						<pre class="fragment"><code>
+<app-dog-list [dogs]="dogs" (add)="handleDogAdd($event)"></app-dog-list>
+						</code></pre>
+					</section>
 				</section>
 
 				<section>
@@ -283,40 +425,7 @@ Observable.fromEvent(el, 'mouseover')
 				</section>
 
 				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+				
 				</section>
 
 				<section>
@@ -327,23 +436,9 @@ Reveal.addEventListener( 'customevent', function() {
 				</section>
 
 				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
+					<h2>Thank you</h2>
 				</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
 
 			</div>
 

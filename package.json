@@ -3,7 +3,7 @@
   "version": "3.5.0",
   "description": "The HTML Presentation Framework",
   "homepage": "http://thatjsdude.com",
-  "subdomain": "revealjs",
+  "subdomain": "",
   "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
