@@ -91,12 +91,34 @@
 					<section>
 						<h2>Why Angular</h2>
 					</section>
-					
 				</section>
-
+				<section>
+					<section>
+						<h1>Setup & Pre requisite</h1>
+					</section>
+					<section>
+						<ul>
+							<li>Latest Node installed</li>
+							<li>Visual Studio Code</li>
+						</ul>
+					</section>
+				</section>
 				<section>
 					<section>
 						<h2>Angular Building Block</h2>
+					</section>
+					<section>
+						<h2>building block</h2>
+						<ul>
+							<li>Component</li>
+							<li>Service</li>
+							<li>Directive</li>
+							<li>Module</li>
+							<li>Template & Data Binding</li>
+							<li>Routes</li>
+							<li>Http Client</li>
+							<li>Testing</li>
+						</ul>
 					</section>
 				</section>
 
@@ -131,8 +153,16 @@
 						<br>
 						<a href="https://github.com/angular/angular-cli/wiki/new">ng-new doc</a>
 					</section>
+					<section>
+						<h2>See what inside</h2>
+						<ul>
+							<li>Explore the Default code generator</li>
+							<li>App Module</li>
+							<li>App Component</li>
+							<li>Different pieces of App component</li>
+						</ul>
+					</section>
 				</section>
-
 				<section>
 					<section>
 						<h2>TypeScript</h2>
@@ -196,28 +226,53 @@ const dog = new Dog({ name: 'Bear', breed: 'Border Collie', age: 4 });
 				</section>
 				<section>
 					<section>
-						<h2>Data bind and templating</h2>
+						<h2>Template and Data binding</h2>
 					</section>
 					<section>
-						<h2>Types of binding</h2>
+						<h2>Templating</h2>
+						<ul>
+							<li>A template is HTML that tells Angular how to render a component</li>
+							<li>Templates include data bindings as well as other components and directives</li>
+							<li>Angular 2 leverages native DOM events and properties which dramatically reduces the need for a ton of builtin directives</li>
+							<li>Angular 2 leverages shadow DOM to do some really interesting things with view encapsulation</li>
+						</ul>
+					</section>
+					<section>
 						<pre><code>
-&lt;p&gt; someAttribute="value">&lt;/p&gt;
+<div class="experiment" (click)="doExperiment()">
+ <h3>{{ experiment.name }}</h3>
+ <p>{{ experiment.description }}</p>
+ <p><strong>{{experiment.completed}}</strong></p>
+ </div>
 						</code></pre>
-						<div class="fragment">
-							<pre><code>
-<p [someAttribute]="someObject"></p>
-							</code></pre>
-						</div>
-						<div class="fragment">
-							<pre><code>
-<p (click)="handleClick()"></p>
-							</code></pre>
-						</div>
-						<div class="fragment">
-							<pre><code>
-<input [(ngModel)]="someModel">
-							</code></pre>
-						</div>
+					</section>
+					<section>
+						<h2>Data binding</h2>
+						<ul>
+							<li>Enables data to flow from the component to template and vice-versa</li>
+							<li>Includes interpolation, property binding, event binding, and two-way binding (property binding and event binding combined)</li>
+							<li>The binding syntax has expanded but the result is a much smaller framework footprint</li>
+						</ul>
+					</section>
+					<section>
+						<pre><code>
+<h1>{{title}}</h1>
+<p>{{body}}</p>
+<hr/>
+<experiment *ngFor="#experiment of experiments"
+ [experiment]="experiment"></experiment>
+<hr/>
+<div>
+ <h2 class="text-error">Experiments: {{message}}</h2>
+ <form class="form-inline">
+ <input type="text"
+ [(ngModel)]="message" placeholder="Message">
+ <button type="submit" class="btn"
+ (click)="updateMessage(message)">Update Message
+ </button>
+ </form>
+</div>
+						</code></pre>
 					</section>
 				</section>
 				<section>
@@ -269,6 +324,15 @@ export class AppComponent {
 						</ul>						
 					</section>
 					<section>
+						<h2>Things need to import</h2>
+						<ul>
+							<li>Import the core Angular dependencies</li>
+							<li>Import 3rd party dependencies</li>
+							<li>Import your custom dependencies</li>
+							<li>This approach gives us a more fine-grained control over the managing our dependencies</li>
+						</ul>
+					</section>
+					<section>
 						<h2>Types of Component</h2>
 						<ul>
 							<li>Fature Component</li>
@@ -284,6 +348,12 @@ export class AppComponent {
 					</section>		
 					<section>
 						<h2>What services do</h2>
+						<ul>
+							<li>A service is just a class</li>
+							<li>Should only do one specific thing</li>
+							<li>Take the burden of business logic out of components</li>
+							<li>Decorate with @Injectable when we need to inject dependencies into our service</li>
+						</ul>
 					</section>		
 					<section>
 						<h2>RxJS</h2>
@@ -359,6 +429,33 @@ import { NgModule } from '@angular/core';
 					</section>
 				</section>
 
+				<section>
+					<section>
+						<h1>Component Life Cycle</h1>
+					</section>
+					<section>
+						<ul>
+							<li>Allow us to perform custom logic at various stages of a component's life</li>
+							<li>Data isn't always immediately available in the constructor</li>
+							<li>Only available in TypeScript</li>
+							<li>The lifecycle interfaces are optional. We recommend adding them to benefit from TypeScript's strong typing and editor tooling</li>
+							<li>Implemented as class methods on the component class</li>
+						</ul>
+					</section>
+					<section>
+						<ul>							
+							<li>ngOnChanges - called when an input or output binding value changes</li>
+							<li>ngOnInit - after the first ngOnChanges</li>
+							<li>ngDoCheck - developer's custom change detection</li>
+							<li>ngAfterContentInit - after component content initialized</li>
+							<li>ngAfterContentChecked - after every check of component content</li>
+							<li>ngAfterViewInit - after component's view(s) are initialized</li>
+							<li>ngAfterViewChecked - after every check of a component's view(s)</li>
+							<li>ngOnDestroy - just before the directive is destroyed.</li>
+						</ul>
+					</section>
+				</section>
+
 				
 				<section>
 					<section>
@@ -421,13 +518,135 @@ export class DogListComponent {
 				</section>
 
 				<section>
-					
-				</section>
-
-				<section>
-				
-				</section>
-
+					<section>
+						<h1>Routing</h1>
+					</section>	
+					<section>
+						<h2>Router</h2>
+						<ul>
+							<li>Component Router</li>
+							<li>Navigating Routes</li>
+							<li>Route Parameters</li>
+							<li>Query Parameters</li>
+							<li>Child Routes</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Component Router</h2>
+						<ul>
+							<li>Import ROUTE_PROVIDERS, ROUTE_DIRECTIVES, and the RouteConfig decorator</li>
+							<li>Set a base href in the head tag of your HTML like so: <base href="/"></li>
+							<li>Configuration is handled via a decorator function (generally placed next to a component) by passing in an array of route definition objects</li>
+							<li>Use the router-outlet directive to tell Angular where you want a route to put its template <router-outlet></router-outlet></li>
+						</ul>
+					</section>
+					<section>
+						<pre><code>
+RouteConfig([
+ {path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true},
+ {path: '/about', name: 'About', component: AboutComponent},
+ {path: '/experiments', name: 'Experiments', component: ExperimentsComponent}
+])
+export class AppComponent {}
+						</code></pre>
+						<pre class="fragment"><code>
+<div id="container">
+ <router-outlet></router-outlet>
+</div>
+						</code></pre>
+					</section>
+					<section>
+						<h2>Navigating Routes</h2>
+						<ul>
+							<li>Add a routerLink attribute directive to an anchor tag</li>
+							<li>Bind it to a template expression that returns an array of route link parameters <a [routerLink]="['Users']"> Users</a></li>
+							<li>Navigate imperatively by importing Router, injecting it, and then calling .navigate() from within a component method </li>
+							<li>We pass the same array of parameters as we would to the routerLink directive this._router.navigate( ['Users'] );</li>
+						</ul>
+					</section>
+					<section>
+						<pre><code>
+<div id="menu">
+ <a [routerLink]="['/Home']" class="btn">Home</a>
+ <a [routerLink]="['/About']" class="btn">About</a>
+ <a [routerLink]="['/Experiments']" class="btn">Experiments</a>
+</div>
+						</code></pre>
+						<pre class="fragment"><code>
+export class App {
+ constructor(private _router: Router) {}
+ navigate(route) {
+ this._router.navigate([`/${route}`]);
+ }
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Query Parameters</h2>
+						<ul>
+							<li>Denotes an optional value for a particular route</li>
+							<li>Do not add query parameters to the route definition { path:'/users', name: UserDetail, component: UserDetail }</li>
+							<li>Add as a parameter to the routerLink template expression just like router params: <a [routerLink]="['Users', {id: 7}]"> {{user.name}} </a></li>
+							<li>Also accessed by injecting RouteParams into a component</li>
+						</ul>
+					</section>
+					<section>
+						<pre><code>
+<div>
+ <button [routerLink]="['./MyComponent', {id: 1}]">
+ My Component Link</button>
+ <button [routerLink]="['./AnotherComponent', {queryParam: 'bar'}]">
+ Another Component Link</button>
+</div>
+						</code></pre>
+					</section>
+					<section>
+						<pre><code>
+import { Component } from 'angular2/core';
+import { RouteParams } from 'angular2/router';
+@Component({
+ selector: 'my-component',
+ template: `<h1>my component ({{routeParams.get('id')}})!</h1>`
+})
+export class MyComponent {
+ constructor(routeParams: RouteParams) {
+ this.routeParams = routeParams;
+ }
+}
+						</code></pre>
+					</section>
+					<section>
+						Child Routes
+• Ideal for creating reusable components
+• Components with child routes are “ignorant” of the
+parents’ route implementation
+• In the parent route config, end the path with /…
+• In the child config, set the path relative to the parent
+path
+• If more than one child route, make sure to set the
+default route
+					</section>
+					<section>
+						<pre><code>
+@RouteConfig([
+ {
+ path:'/another-component/...',
+ name: 'AnotherComponent',
+ component: AnotherComponent
+ }
+])
+export class App {}
+@RouteConfig([
+ {
+ path:'/first',
+ name: 'FirstChild',
+ component: FirstSubComponent
+ }
+])
+export class AnotherComponent {}
+						</code></pre>
+					</section>
+				</section>				
 				<section>
 					<h2>Take a Moment</h2>
 					<p>
