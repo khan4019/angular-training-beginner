@@ -239,51 +239,50 @@ const dog = new Dog({ name: 'Bear', breed: 'Border Collie', age: 4 });
 				</section>
 				<section>
 					<section>
-						<h2>Template and Data binding</h2>
+						<h1>Templating</h1>
+						<h2>Data binding</h2>
 					</section>
 					<section>
 						<h2>Templating</h2>
 						<ul>
 							<li>A template is HTML that tells Angular how to render a component</li>
 							<li>Templates include data bindings as well as other components and directives</li>
-							<li>Angular 2 leverages native DOM events and properties which dramatically reduces the need for a ton of builtin directives</li>
-							<li>Angular 2 leverages shadow DOM to do some really interesting things with view encapsulation</li>
+							<li>Angular leverages native DOM events and properties which dramatically reduces the need for a ton of builtin directives</li>
+							<li>Angular leverages shadow DOM to do some really interesting things with view encapsulation</li>
 						</ul>
 					</section>
 					<section>
-						<pre><code>
-<div class="experiment" (click)="doExperiment()">
- <h3>{{ experiment.name }}</h3>
- <p>{{ experiment.description }}</p>
- <p><strong>{{experiment.completed}}</strong></p>
- </div>
-						</code></pre>
-					</section>
-					<section>
-						<h2>Data binding</h2>
+						<h2>Data Binding</h2>
 						<ul>
 							<li>Enables data to flow from the component to template and vice-versa</li>
-							<li>Includes interpolation, property binding, event binding, and two-way binding (property binding and event binding combined)</li>
+							<li>Includes interpolation, property binding, event binding, and two-way binding</li>
 							<li>The binding syntax has expanded but the result is a much smaller framework footprint</li>
 						</ul>
 					</section>
 					<section>
+						<pre><code class="hljs html">
+<div class="todo" (click)="taskDone()">
+ <h3>{{ todo.name }}</h3>
+ <p>{{ todo.description }}</p>
+ <p><strong>{{todo.completed}}</strong></p>
+ </div>
+						</code></pre>
+					</section>
+					<section>
 						<pre><code>
-<h1>{{title}}</h1>
-<p>{{body}}</p>
-<hr/>
-<experiment *ngFor="#experiment of experiments"
- [experiment]="experiment"></experiment>
-<hr/>
+<app-todo *ngFor="let todo of todos"
+
+ [todo]="todo">
+</app-todo>
 <div>
- <h2 class="text-error">Experiments: {{message}}</h2>
- <form class="form-inline">
- <input type="text"
- [(ngModel)]="message" placeholder="Message">
- <button type="submit" class="btn"
- (click)="updateMessage(message)">Update Message
- </button>
- </form>
+   <form class="form-inline">
+   	<input type="text"
+ [(ngModel)]="name" placeholder="things you want to do">
+   	<input type="text"
+ [(ngModel)]="description" placeholder="task description">
+ 	<button type="submit" (click)="addTodo(name, description)">Add Todo
+ 	</button>
+</form>
 </div>
 						</code></pre>
 					</section>
