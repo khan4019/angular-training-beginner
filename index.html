@@ -146,13 +146,13 @@
 						</ul>
 					</section>
 					<section>
-						<h3>Just 4 commands</h3>
-						<ul>
-							<li><code>npm install -g @angular/cli</code></li>
-							<li class="fragment"><code>ng new bangular-bank</code></li>
-							<li class="fragment"><code>cd bangular-bank</code></li>
-							<li class="fragment"><code>ng serve</code></li>
-						</ul>
+						<h3>Task 1: Just 4 commands</h3>
+						<pre><code class="hljs javascript">
+							npm install -g @angular/cli
+							ng new bangular-bank
+							cd bangular-bank
+							ng serve
+						</code></pre>						
 					</section>
 					<section>
 						<h3>Other ng new settings</h3>
@@ -312,30 +312,54 @@ import { Dog } from '../dog';
 							<li>Component grouped together</li>
 							<li>Large component broken down into pieces</li>
 						</ul>
-						<p class="fragment">ng generate component my-new-component</p>
 					</section>
 					<section>
-						<h2>Open app.component.ts</h2>
-						<pre><code>
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'app works!';
-}
+						<h2>Create a component</h2>
+						<pre><code class="hljs shell">
+ng generate component user
+ng g c user
 						</code></pre>
-						<ul class="fragment">
-							<li><small>@Component is a decorator that adds metadata to the AppComponent class</small></li>
-							<li><small>selector tells Angular to use this class to fill in uses of <app-root></app-root></small></li>
-							<li><small>templateUrl tells it where to find the HTML to use for filling in</small></li>
-							<li><small>styleUrls is a list of CSS style files to apply to this component</small></li>
+						<img src="images/component1.png" alt="">
+					</section>
+					<section>
+						<img src="images/component2.png" alt="">
+					</section>
+					<section>
+						<h2>Component Decorator</h2>
+						<ul>
+							<li>@Component is a decorator that adds metadata to the AppComponent class</li>
+							<li>selector tells Angular to use this class to fill in uses of &lt;app-user&gt;&lt;/app-user&gt;</li>
+							<li>templateUrl tells it where to find the HTML to use for filling in</li>
+							<li>styleUrls is a list of CSS style files to apply to this component</li>
 						</ul>						
 					</section>
 					<section>
+						<h2>Including component</h2>
+						<pre><code class="hljs html">
+<h1>
+  {{title}}
+</h1>
+<app-user></app-user>
+						</code></pre>
+						<ul>
+							<li>in app.component.ts add &lt;app-user&gt;&lt;/app-user&gt;</li>							
+						</ul>
+					</section>
+					<section>
+						<h2>Task 2: use template</h2>
+						<ul>
+							<li>add userName property in user.component.ts</li>
+							<li>add template to display userName</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Task 3: bind an array</h2>
+						<ul>
+							<li>Create a property with users</li>
+							<li>display user name in a list</li>
+						</ul>
+					</section>
+					<!-- <section>
 						<h2>Things need to import</h2>
 						<ul>
 							<li>Import the core Angular dependencies</li>
@@ -352,7 +376,7 @@ export class AppComponent {
 							<li></li>
 							<li></li>
 						</ul>
-					</section>
+					</section> -->
 				</section>
 				<section>
 					<section>
@@ -361,12 +385,29 @@ export class AppComponent {
 					<section>
 						<h2>What services do</h2>
 						<ul>
-							<li>A service is just a class</li>
-							<li>Should only do one specific thing</li>
-							<li>Take the burden of business logic out of components</li>
+							<li>A service is just a javascript class</li>
+							<li>Takes heavy funcationality out of component</li>
+							<li>Hold common funcationality among components</li>
+							<li>Load data from server</li>
 							<li>Decorate with @Injectable when we need to inject dependencies into our service</li>
 						</ul>
-					</section>		
+					</section>	
+					<section>
+						<h2>Task 3: create a service</h2>
+						<pre><code>ng g s github\github</code></pre>
+						<img src="images/service1.png" alt="">
+					</section>
+					<section>
+						<img src="images/service2.png" alt="">
+					</section>					
+				</section>
+				<section>
+					<section>
+						<h1>Load Data from server</h1>
+					</section>
+					<section>
+						<img src="images/service4.png" alt="">
+					</section>
 					<section>
 						<h2>RxJS</h2>
 						<ul>
@@ -377,7 +418,7 @@ export class AppComponent {
 					</section>
 					<section>
 						<h2>Observable</h2>
-						<pre><code>
+						<pre><code class="hljs typescript">
 import { Observable } from 'rxjs/Observable';
 
 Observable.create(observer => {
@@ -386,20 +427,21 @@ Observable.create(observer => {
   .subscribe((value: number) => {
     console.log(value); // 42
   });
-						</code></pre>
-						<pre class="fragment"><code>
-import { Observable } from 'rxjs';
-
-const el = document.getElementById('some-el');
-Observable.fromEvent(el, 'mouseover')
-  .subscribe((ev: MouseEvent) => {
-    console.log(ev.pageX, ev.pageY); // x and y
-  });
-						</code></pre>
+						</code></pre>						
 					</section>
 					<section>
-						<h2>Create cli</h2>
-						<p><code>ng generate service my-service</code></p>
+						<h2>Task 4: Load Data</h2>
+						<img src="images/service3.png" alt="">
+					</section>
+					<section>
+						<h2>Task 5: Display Data</h2>
+						<ul>
+							<li>import service</li>
+							<li>Dependency injection of service</li>
+							<li>Call getuserDetail by providing a userId from ngOnInit</li>
+							<li>Set user Detail on a property</li>
+							<li>Bind user login and profile picture in the dom</li>
+						</ul>
 					</section>
 				</section>
 
