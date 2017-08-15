@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Angular for absolute beginners</title>
+	<title>ngrx: RxJS powered state management</title>
 
 	<meta name="description" content="An introductory talk for funcational programming in JavaScript">
 	<meta name="author" content="That JS Dude">
@@ -48,27 +48,29 @@
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 			<section>
-				<h2>Angular for Absolute Beginner</h2>
-				<br>
+                <h1>ngrx</h1>
+                <h3>RxJS powered state management</h3>
 				<br>
 				<p class="fragment"><a href="https://goo.gl/pdio1i">Just twitted the slides <strong style="color:purple">@jsdude005</strong></a></p>
-				<br>
-				<br>
-				<p>
-					<a href="http://thatjsdude.com">ThatJSDude.com</a> / <a href="http://twitter.com/jsdude005">@jsdude005</a>
-				</p>
-				<p>
-					<small><a href="http://www.youtube.com/c/ThatJSDude">youtube.com/c/ThatJSDude </a></small>
-				</p>
+                <br>
+                <br>
+                <p>
+                    <a href="http://thatjsdude.com">ThatJSDude.com</a> / <a href="http://twitter.com/jsdude005">@jsdude005</a>
+                </p>
+                <p>
+                    <small><a href="http://www.youtube.com/c/ThatJSDude">youtube.com/c/ThatJSDude </a></small>
+                </p>
 			</section>
 			<section>
-				<h2>Goal for you</h2>
+				<h2>What I think about you</h2>
 				<ul>
-					<li>Getting started with Angular</li>
-					<li>Core Concpets and Building Blocks</li>
-                    <li>Build a functional app with Angular</li>
-                    <li>Angular means Angular2+</li>
-				</ul>
+                    <li class="fragment">A rockstar</li>
+                    <li class="fragment">Angular 2+ guru</li>
+                    <li class="fragment">Master in Typescript</li>
+                    <li class="fragment">Pro in RxJS</li>
+                    <li class="fragment">Redux Nerd</li>
+                </ul>
+                <h5 style="color:purple" class="fragment">If all is true, come and tell us your secret</h5>
             </section>
             <section>
                     <section>
@@ -101,55 +103,114 @@
                 </section>
 				<section>
 					<section>
-						<h2>Why Angular</h2>
+                        <h2>Why ngRx</h2>
+                        <blockquote>Redux is hard for simple problem and simple for hard problem</blockquote>
                     </section>
                     <section>
-                        <h2>Why Angular</h2>
+                        <h2>Purpose of ngrx</h2>
                         <ul>
-                            <li>Your manager said so</li>
-                            <li>You are Angular1 veterans</li>
-                            <li>Live in a .Net world</li>
-                            <li>Trust google ecosystem</li>
-                            <li>Love full package</li>
+                            <li>Share state among components</li>
+                            <li>Organize user actions</li>
+							<li>Cleanly defined what is changed due to what</li>
+							<li>Feel like a Nerd</li>
                         </ul>
                     </section>
 				</section>
-				<section>
-					<h2>Setup & Pre requisite</h2>
-					<ul>
-						<li>Latest Node: <a href="https://nodejs.org/en/download/">download link</a></li>
-						<li>Visual Studio Code: <a href="https://code.visualstudio.com/download">download link</a></li>
-					</ul>
-                </section>
                 <section>
                     <section>
                         <h1>Agenda</h1>
                     </section>
                     <section>
-                        <h2>Six parts</h2>
-                        <ul>
-                            <li class="fragment">Resume Driven Development</li>
-                            <li class="fragment"></li>
-                            <li class="fragment">Manager Yell Driven Development</li>
-                            <li class="fragment"></li>
-                            <li class="fragment"></li>
-                        </ul>
+						<ul>
+							<li>Basic building blocks</li>
+							<li>Observable and async pipe</li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+                        <br><br>
+                        <a href="https://egghead.io/lessons/angular-2-render-an-observable-with-the-async-pipe">observable</a>
                     </section>
                 </section>
 				<section>
-					<h2>Building Block</h2>
-					<ul>
-						<li>Component</li>
-                        <li>Service</li>
-                        <li>Load data from server</li>
-						<li>Module</li>
-						<li>Template & Data Binding</li>
-                        <li>Routes</li>
-                        <li>Little touch on Typescript</li>
-                        <li>Little touch on ES6</li>
-						<li>Testing</li>
-                    </ul>
-                    <h4 class="fragment" style="color:red">All in one hour! Are you crazy :'(</h4>
+					<section>
+							<h2>Basic Building Block</h2>
+							<ul>
+								<li>Store</li>
+								<li>Action</li>
+								<li>Dispatch</li>
+								<li>Reducer</li>
+							</ul>
+							
+					</section>
+					<section>
+							<h2>Store</h2>
+							<ul>
+								<li>Holds application state</li>
+								<li>Only one store for all its application state</li>
+								<li>Single source of truth</li>
+							</ul>
+						</section>
+						<section>
+							<img src="./images/redux/solve2.png" alt="">
+						</section>
+						<section>
+							<h2>Action</h2>
+							<ul>
+								<li>Actions</li>
+								<li>Action Creator</li>
+								
+							</ul>
+							<pre><code class="hljs JavaScript">
+		{
+		  type: 'ADD_TODO',
+		  text: 'Take 8 bathroom breaks'
+		}
+							</code></pre>
+							<pre class="fragment"><code class="hljs javascript">
+		const addTodo = text => ({
+			type: 'ADD_TODO',
+			text
+		  })
+							</code></pre>
+							<li class="fragment">dispatch action</li>
+							<aside class="notes">
+								<p>Actions are plain JavaScript objects. Actions must have a type property that indicates the type of action being performed. </p>
+							</aside>
+						</section>
+						<section>
+							<h2>reducer</h2>
+							<ul>
+								<li>Actions describe the fact that something happened</li>
+								<li>Action don't specify how the application's state should change</li>
+								<li class="fragment">How state will change will be defined by <strong>reducer</strong></li>
+							</ul>
+							<pre class="fragment"><code>
+		case ADD_TODO:
+			  return [
+				...state,
+				{
+				  text: action.text,
+				  completed: false
+				}
+			  ]
+							</code></pre>
+						</section>
+						<section>
+							<h2>reducer</h2>
+							<img src="./images/redux/reducer.png" alt="">
+						</section>
+						<section>
+							<h2>Data Flow</h2>
+							<ul>
+								<li>An action is a plain object describing what happened</li>
+								<li class="fragment">You can call store.dispatch(action) from anywhere in your app</li>
+								<li class="fragment">Redux store calls the reducer function you gave for this action.</li>
+								<li class="fragment">In root reducer you may combine multiple reducers into a single state tree</li>
+								<li class="fragment">The Redux store saves the complete state tree returned by the root reducer</li>
+							</ul>
+						</section>
+						
 				</section>
 
 				<section>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Angular for absolute beginners</title>
+	<title>Functional Programming: What Why and How</title>
 
 	<meta name="description" content="An introductory talk for funcational programming in JavaScript">
 	<meta name="author" content="That JS Dude">
@@ -48,17 +48,12 @@
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 			<section>
+				<img src="images/gdi.png" height="200px" alt="">
 				<h2>Angular for Absolute Beginner</h2>
 				<br>
 				<br>
-				<p class="fragment"><a href="https://goo.gl/pdio1i">Just twitted the slides <strong style="color:purple">@jsdude005</strong></a></p>
-				<br>
-				<br>
 				<p>
-					<a href="http://thatjsdude.com">ThatJSDude.com</a> / <a href="http://twitter.com/jsdude005">@jsdude005</a>
-				</p>
-				<p>
-					<small><a href="http://www.youtube.com/c/ThatJSDude">youtube.com/c/ThatJSDude </a></small>
+					<small><a href="http://thatjsdude.com">Jhankar Mahbub</a> / <a href="http://twitter.com/jsdude005">@jsdude005</a></small>
 				</p>
 			</section>
 			<section>
@@ -66,53 +61,52 @@
 				<ul>
 					<li>Getting started with Angular</li>
 					<li>Core Concpets and Building Blocks</li>
-                    <li>Build a functional app with Angular</li>
-                    <li>Angular means Angular2+</li>
+					<li>Build a functional app with Angular</li>
 				</ul>
-            </section>
-            <section>
-                    <section>
-                        <h2>Who is</h2>
-                        <h1>JS   Dude?</h1>
-                    </section>
-                    <section>
-                            <img style="height:350px;" src="./images/others/thatconf.jpg" alt="">
-                        <ul>
-                            <li>Organizer Chicago JavaScript meetup</li>
-                            <li>Organize Chicago front end developers group</li>
-                            <li>Giving talk all over the places</li>
-                            <li>Came to Twin Cities code camp in 2013</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <img src="./images/others/marathon.jpg" alt="">
-                    </section>
-                    <section>
-                        <h2>Catch me if you want</h2>
-                        <ul>
-                            <li style="color:purple"><strong>@jsdude005</strong></li>
-                            <li>Website: <strong style="color:purple">www.thatJSDude.com</strong></li>
-                            <li>Interview Questions: <strong style="color:purple">github.com/khan4019</strong></li>
-                            <li>Youtube:youtube.com/c/thatjsdude </li>
-                            <li>Email: khan4019@gmail.com</li>
-                        </ul>
-                        
-                    </section>
-                </section>
+			</section>
+			<section>
+					<section>
+						<h2>How your day will look like</h2>						
+					</section>
+					<section>
+						<h2>Morning</h2>
+						<ul>
+							<li>9.30-10.00: Why angular and Angular building blocks</li>
+							<li>10.00-10.20: ng cli and create your first app</li>
+							<li>10.20-10.30: Intro to TypeScript</li>
+							<li>10.30-10.50: Add components</li>
+							<li>10.50-11.00: break</li>
+							<li>11.00-11.40: data binding event handling and pipes</li>
+							<li>11.40-12.00: Modules</li>
+							<li>12.00-1.00: Lunch break</li>
+						</ul>
+					</section>
+					<section>
+						<h2>After Lunch</h2>
+						<ul>
+							<li>1.00-1.30: RxJS and Service</li>
+							<li>1.30-2.00: Install and apply Material Design</li>
+							<li>2.00-2.30: Create componet with md-card</li>
+							<li>2.30-2.45: QA</li>
+							<li>2.45-3.00: Small break</li>
+						</ul>
+					</section>
+					<section>
+						<h2>After Snacks</h2>
+						<ul>
+							<li>3.00-3.30: Angular router</li>
+							<li>3.30-4.00: Pass router data and Auth guard</li>
+							<li>4.00-4.20: Pass data to child component</li>
+							<li>4.30-4.40: Managing state</li>
+							<li>4.40-5.00: Final QA</li>
+						</ul>
+					</section>
+				</section>
+
 				<section>
 					<section>
 						<h2>Why Angular</h2>
-                    </section>
-                    <section>
-                        <h2>Why Angular</h2>
-                        <ul>
-                            <li>Your manager said so</li>
-                            <li>You are Angular1 veterans</li>
-                            <li>Live in a .Net world</li>
-                            <li>Trust google ecosystem</li>
-                            <li>Love full package</li>
-                        </ul>
-                    </section>
+					</section>
 				</section>
 				<section>
 					<h2>Setup & Pre requisite</h2>
@@ -120,36 +114,19 @@
 						<li>Latest Node: <a href="https://nodejs.org/en/download/">download link</a></li>
 						<li>Visual Studio Code: <a href="https://code.visualstudio.com/download">download link</a></li>
 					</ul>
-                </section>
-                <section>
-                    <section>
-                        <h1>Agenda</h1>
-                    </section>
-                    <section>
-                        <h2>Six parts</h2>
-                        <ul>
-                            <li class="fragment">Resume Driven Development</li>
-                            <li class="fragment"></li>
-                            <li class="fragment">Manager Yell Driven Development</li>
-                            <li class="fragment"></li>
-                            <li class="fragment"></li>
-                        </ul>
-                    </section>
-                </section>
+				</section>
 				<section>
 					<h2>Building Block</h2>
 					<ul>
 						<li>Component</li>
-                        <li>Service</li>
-                        <li>Load data from server</li>
+						<li>Service</li>
+						<li>Directive</li>
 						<li>Module</li>
 						<li>Template & Data Binding</li>
-                        <li>Routes</li>
-                        <li>Little touch on Typescript</li>
-                        <li>Little touch on ES6</li>
+						<li>Routes</li>
+						<li>Http Client</li>
 						<li>Testing</li>
-                    </ul>
-                    <h4 class="fragment" style="color:red">All in one hour! Are you crazy :'(</h4>
+					</ul>
 				</section>
 
 				<section>
@@ -187,6 +164,19 @@ ng serve
 						<br>
 						<a href="https://github.com/angular/angular-cli/wiki/new">ng-new doc</a>
 					</section>
+					<section>
+						<h2>See what inside</h2>
+						<img src="images/basic-app-structure1.png" alt="">
+					</section>
+					<section>
+						<h2>Inside src </h2>
+						<img src="images/basic-app-structure2.png" alt="">
+					</section>
+					<section>
+						<h2>Inside App</h2>
+						<img src="images/basic-app-structure3.png" alt="">
+					</section>
+
 				</section>
 
 				<section>
