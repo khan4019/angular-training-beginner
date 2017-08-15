@@ -51,15 +51,42 @@
                 <h1>ngrx</h1>
                 <h3>RxJS powered state management</h3>
 				<br>
-				<p class="fragment"><a href="https://goo.gl/pdio1i">Just twitted the slides <strong style="color:purple">@jsdude005</strong></a></p>
-                <br>
-                <br>
-                <p>
-                    <a href="http://thatjsdude.com">ThatJSDude.com</a> / <a href="http://twitter.com/jsdude005">@jsdude005</a>
-                </p>
-                <p>
-                    <small><a href="http://www.youtube.com/c/ThatJSDude">youtube.com/c/ThatJSDude </a></small>
-                </p>
+				<br>
+				<br>
+				<p>
+					<small><a href="http://thatjsdude.com">Jhankar Mahbub</a> / <a href="http://twitter.com/jsdude005">@jsdude005</a></small>
+				</p>
+				<p>
+					<small>www.thatjsdude.com</small>
+				</p>
+			</section>
+			<section>
+				<section>
+					<h2>Who is</h2>
+					<h1>JS   Dude?</h1>
+				</section>
+				<section>
+					<img src="./images/others/dude.jpeg" alt="">
+					<ul>
+						<li style="color:purple"><strong>@jsdude005</strong></li>
+						<li>Organize Chicago JavaScript meetup</li>
+						<li>Sr. Web Developer, Nielsen</li>
+						<li>Enjoy Learning, talking about JavaScript</li>
+						<!-- <li>Twin Cities code camp in 2013, 2014</li> -->
+					</ul>
+				</section>
+				<section>
+					<img src="./images/others/jump.JPG" alt="">
+				</section>
+				<!-- <section>
+					<img src="./images/others/skydiving.JPG" alt="">
+				</section> -->
+				<section>
+					<img src="./images/others/marathon.jpg" alt="">
+				</section>
+				<section>
+					<img src="./images/others/mudder.jpg" alt="">
+				</section>
 			</section>
 			<section>
 				<h2>What I think about you</h2>
@@ -72,35 +99,6 @@
                 </ul>
                 <h5 style="color:purple" class="fragment">If all is true, come and tell us your secret</h5>
             </section>
-            <section>
-                    <section>
-                        <h2>Who is</h2>
-                        <h1>JS   Dude?</h1>
-                    </section>
-                    <section>
-                            <img style="height:350px;" src="./images/others/thatconf.jpg" alt="">
-                        <ul>
-                            <li>Organizer Chicago JavaScript meetup</li>
-                            <li>Organize Chicago front end developers group</li>
-                            <li>Giving talk all over the places</li>
-                            <li>Came to Twin Cities code camp in 2013</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <img src="./images/others/marathon.jpg" alt="">
-                    </section>
-                    <section>
-                        <h2>Catch me if you want</h2>
-                        <ul>
-                            <li style="color:purple"><strong>@jsdude005</strong></li>
-                            <li>Website: <strong style="color:purple">www.thatJSDude.com</strong></li>
-                            <li>Interview Questions: <strong style="color:purple">github.com/khan4019</strong></li>
-                            <li>Youtube:youtube.com/c/thatjsdude </li>
-                            <li>Email: khan4019@gmail.com</li>
-                        </ul>
-                        
-                    </section>
-                </section>
 				<section>
 					<section>
                         <h2>Why ngRx</h2>
@@ -116,7 +114,7 @@
                         </ul>
                     </section>
 				</section>
-                <section>
+                <!-- <section>
                     <section>
                         <h1>Agenda</h1>
                     </section>
@@ -131,7 +129,7 @@
                         <br><br>
                         <a href="https://egghead.io/lessons/angular-2-render-an-observable-with-the-async-pipe">observable</a>
                     </section>
-                </section>
+                </section> -->
 				<section>
 					<section>
 							<h2>Basic Building Block</h2>
@@ -162,16 +160,16 @@
 								
 							</ul>
 							<pre><code class="hljs JavaScript">
-		{
-		  type: 'ADD_TODO',
-		  text: 'Take 8 bathroom breaks'
-		}
+{
+  type: 'ADD_TODO',
+  text: 'Take 8 bathroom breaks'
+}
 							</code></pre>
 							<pre class="fragment"><code class="hljs javascript">
-		const addTodo = text => ({
-			type: 'ADD_TODO',
-			text
-		  })
+const addTodo = text => ({
+  type: 'ADD_TODO',
+  text
+})
 							</code></pre>
 							<li class="fragment">dispatch action</li>
 							<aside class="notes">
@@ -186,14 +184,14 @@
 								<li class="fragment">How state will change will be defined by <strong>reducer</strong></li>
 							</ul>
 							<pre class="fragment"><code>
-		case ADD_TODO:
-			  return [
-				...state,
-				{
-				  text: action.text,
-				  completed: false
-				}
-			  ]
+case ADD_TODO:
+	return [
+		...state,
+		{
+			text: action.text,
+			completed: false
+		}
+	]
 							</code></pre>
 						</section>
 						<section>
@@ -203,11 +201,11 @@
 						<section>
 							<h2>Data Flow</h2>
 							<ul>
-								<li>An action is a plain object describing what happened</li>
-								<li class="fragment">You can call store.dispatch(action) from anywhere in your app</li>
-								<li class="fragment">Redux store calls the reducer function you gave for this action.</li>
+								<li>Action is a plain object describing what happened</li>
+								<li class="fragment">Call store.dispatch(action) from anywhere in your app</li>
+								<li class="fragment">Store calls the reducer function you gave for the given action.</li>
 								<li class="fragment">In root reducer you may combine multiple reducers into a single state tree</li>
-								<li class="fragment">The Redux store saves the complete state tree returned by the root reducer</li>
+								<li class="fragment">Store saves the complete state tree returned by the root reducer</li>
 							</ul>
 						</section>
 						
@@ -231,10 +229,13 @@
 					</section>
 					<section>
 						<h3>Task 1: Just 4 commands</h3>
-						<pre><code class="hljs javascript">
+						<pre><code class="hljs batch">
 npm install -g @angular/cli
+
 ng new bangular-bank
+
 cd bangular-bank
+
 ng serve
 						</code></pre>						
 					</section>
@@ -262,7 +263,7 @@ add(1, 3);   // returns 4
 add(1, '3'); // causes a compiler error
 						</code></pre>
 					</section>
-					<section>
+					<!-- <section>
 						<h2></h2>
 						<pre><code class="hljs typescript">
 class TodoItems {
@@ -280,7 +281,7 @@ class TodoItems {
 const allItems = new TodoItems(['install NPM', 'install Node']);
 						</code></pre>
 					</section>
-					<!-- <section>
+					<section>
 						<h2>Interface</h2>
 						<pre><code>
 export interface IDogData {
@@ -311,26 +312,6 @@ const dog = new Dog({ name: 'Bear', breed: 'Border Collie', age: 4 });
 				<section>
 					<section>
 						<h1>Templating</h1>
-						<h2>Data binding</h2>
-					</section>
-					<section>
-						<h2>Templating</h2>
-						<ul>
-							<li>A template is HTML that tells Angular how to render a component</li>
-							<li>Templates include data bindings as well as other components and directives</li>
-							<li>Angular leverages native DOM events and properties which dramatically reduces the need for a ton of builtin directives</li>
-							<li>Angular leverages shadow DOM to do some really interesting things with view encapsulation</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Data Binding</h2>
-						<ul>
-							<li>Enables data to flow from the component to template and vice-versa</li>
-							<li>Includes interpolation, property binding, event binding, and two-way binding</li>
-							<li>The binding syntax has expanded but the result is a much smaller framework footprint</li>
-						</ul>
-					</section>
-					<section>
 						<pre><code class="hljs html">
 <div class="todo" (click)="taskDone()">
  <h3>{{ todo.name }}</h3>
@@ -338,23 +319,12 @@ const dog = new Dog({ name: 'Bear', breed: 'Border Collie', age: 4 });
  <p><strong>{{todo.completed}}</strong></p>
  </div>
 						</code></pre>
-					</section>
-					<section>
-						<pre><code>
+					
+						<pre class="fragment"><code>
 <app-todo *ngFor="let todo of todos"
 
  [todo]="todo">
 </app-todo>
-<div>
-   <form class="form-inline">
-   	<input type="text"
- [(ngModel)]="name" placeholder="things you want to do">
-   	<input type="text"
- [(ngModel)]="description" placeholder="task description">
- 	<button type="submit" (click)="addTodo(name, description)">Add Todo
- 	</button>
-</form>
-</div>
 						</code></pre>
 					</section>
 				</section>
@@ -395,59 +365,6 @@ ng g c user
 					<section>
 						<img src="images/component2.png" alt="">
 					</section>
-					<section>
-						<h2>Component Decorator</h2>
-						<ul>
-							<li>@Component is a decorator that adds metadata to the AppComponent class</li>
-							<li>selector tells Angular to use this class to fill in uses of &lt;app-user&gt;&lt;/app-user&gt;</li>
-							<li>templateUrl tells it where to find the HTML to use for filling in</li>
-							<li>styleUrls is a list of CSS style files to apply to this component</li>
-						</ul>						
-					</section>
-					<section>
-						<h2>Including component</h2>
-						<pre><code class="hljs html">
-<h1>
-  {{title}}
-</h1>
-<app-user></app-user>
-						</code></pre>
-						<ul>
-							<li>in app.component.ts add &lt;app-user&gt;&lt;/app-user&gt;</li>							
-						</ul>
-					</section>
-					<section>
-						<h2>Task 2: use template</h2>
-						<ul>
-							<li>add userName property in user.component.ts</li>
-							<li>add template to display userName</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Task 3: bind an array</h2>
-						<ul>
-							<li>Create a property with users</li>
-							<li>display user name in a list</li>
-						</ul>
-					</section>
-					<!-- <section>
-						<h2>Things need to import</h2>
-						<ul>
-							<li>Import the core Angular dependencies</li>
-							<li>Import 3rd party dependencies</li>
-							<li>Import your custom dependencies</li>
-							<li>This approach gives us a more fine-grained control over the managing our dependencies</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Types of Component</h2>
-						<ul>
-							<li>Fature Component</li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</section> -->
 				</section>
 				<section>
 					<section>
@@ -474,12 +391,6 @@ ng g c user
 				</section>
 				<section>
 					<section>
-						<h1>Load Data from server</h1>
-					</section>
-					<section>
-						<img src="images/service4.png" alt="">
-					</section>
-					<section>
 						<h2>RxJS</h2>
 						<ul>
 							<li>Library for reactive programming</li>
@@ -500,276 +411,10 @@ Observable.create(observer => {
   });
 						</code></pre>						
 					</section>
-					<section>
-						<h2>Task 4: Load Data</h2>
-						<img src="images/service3.png" alt="">
-					</section>
-					<section>
-						<h2>Task 5: Display Data</h2>
-						<ul>
-							<li>import service</li>
-							<li>Dependency injection of service</li>
-							<li>Call getuserDetail by providing a userId from ngOnInit</li>
-							<li>Set user Detail on a property</li>
-							<li>Bind user login and profile picture in the dom</li>
-						</ul>
-					</section>
 				</section>
 
 				<section>
-					<section>
-						<h2>Material Design</h2>
-					</section>
-					<section>
-						<ul>
-							<li>Framework used to layout the app responsively</li>
-							<li>Do not feel that you need to implement the labs with Angular Material</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Install Material Design</h2>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h1>Modules</h1>
-					</section>
-					<section>
-						<ul>
-							<li>central building block of Angular</li>
-							<li>helps organize code into cohesive blocks of functionality</li>
-						</ul>
-					</section>
-					<section>
-						<pre><code>
-import { NgModule } from '@angular/core';
-
-@NgModule({
-  imports: [],
-  declarations: [],
-  bootstrap: []
-})
-						</code></pre>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h1>Component Life Cycle</h1>
-					</section>
-					<section>
-						<ul>
-							<li>Allow us to perform custom logic at various stages of a component's life</li>
-							<li>Data isn't always immediately available in the constructor</li>
-							<li>Only available in TypeScript</li>
-							<li>The lifecycle interfaces are optional. We recommend adding them to benefit from TypeScript's strong typing and editor tooling</li>
-							<li>Implemented as class methods on the component class</li>
-						</ul>
-					</section>
-					<section>
-						<ul>							
-							<li>ngOnChanges - called when an input or output binding value changes</li>
-							<li>ngOnInit - after the first ngOnChanges</li>
-							<li>ngDoCheck - developer's custom change detection</li>
-							<li>ngAfterContentInit - after component content initialized</li>
-							<li>ngAfterContentChecked - after every check of component content</li>
-							<li>ngAfterViewInit - after component's view(s) are initialized</li>
-							<li>ngAfterViewChecked - after every check of a component's view(s)</li>
-							<li>ngOnDestroy - just before the directive is destroyed.</li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h1>Pass Data to Component</h1>
-					</section>
-					<section>
-						<h2>Using @Input</h2>
-						<pre><code>
-import { Component, Input } from '@angular/core';
-
-@Component({
-  selector: 'app-say-hello',
-  templateUrl: './hello.component.html'
-})
-export class SayHelloComponent {
-  @Input()
-  public name: string;
-}
-						</code></pre>
-						<pre class="fragment"><code>
-<h3 *ngIf="name">Hello {{name}}!</h3>
-						</code></pre>
-						<pre class="fragment"><code>
-<app-say-hello name="John"></app-say-hello>
-						</code></pre>
-					</section>
-					<section>
-						<h2>@Output</h2>
-						<ul>
-							<li>A decorator used to handle "custom" events</li>
-							<li>Similar to & callback binding in AngularJS</li>
-						</ul>
-					</section>
-					<section>
-						<h2>@output</h2>
-						<pre><code>
-import { Component, EventEmitter, Output } from '@angular/core';
-
-@Component({
-  selector: 'app-dog-list',
-  templateUrl: './dog-list.component.html'
-})
-export class DogListComponent {
-  @Output()
-  public add: new EventEmitter();
-
-  @Input()
-  public dogs: IDog[] = [];
-
-  addDog(dog: IDog) {
-    this.dogs.push(dog);
-    this.add.emit(dog);
-  }
-}
-						</code></pre>
-						<pre class="fragment"><code>
-<app-dog-list [dogs]="dogs" (add)="handleDogAdd($event)"></app-dog-list>
-						</code></pre>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h1>Routing</h1>
-					</section>	
-					<section>
-						<h2>Router</h2>
-						<ul>
-							<li>Component Router</li>
-							<li>Navigating Routes</li>
-							<li>Route Parameters</li>
-							<li>Query Parameters</li>
-							<li>Child Routes</li>
-						</ul>
-					</section>
-					<!-- <section>
-						<h2>Component Router</h2>
-						<ul>
-							<li>Import ROUTE_PROVIDERS, ROUTE_DIRECTIVES, and the RouteConfig decorator</li>
-							<li>Set a base href in the head tag of your HTML like so: <base href="/"></li>
-							<li>Configuration is handled via a decorator function (generally placed next to a component) by passing in an array of route definition objects</li>
-							<li>Use the router-outlet directive to tell Angular where you want a route to put its template <router-outlet></router-outlet></li>
-						</ul>
-					</section>
-					<section>
-						<pre><code>
-RouteConfig([
- {path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true},
- {path: '/about', name: 'About', component: AboutComponent},
- {path: '/experiments', name: 'Experiments', component: ExperimentsComponent}
-])
-export class AppComponent {}
-						</code></pre>
-						<pre class="fragment"><code>
-<div id="container">
- <router-outlet></router-outlet>
-</div>
-						</code></pre>
-					</section>
-					<section>
-						<h2>Navigating Routes</h2>
-						<ul>
-							<li>Add a routerLink attribute directive to an anchor tag</li>
-							<li>Bind it to a template expression that returns an array of route link parameters <a [routerLink]="['Users']"> Users</a></li>
-							<li>Navigate imperatively by importing Router, injecting it, and then calling .navigate() from within a component method </li>
-							<li>We pass the same array of parameters as we would to the routerLink directive this._router.navigate( ['Users'] );</li>
-						</ul>
-					</section>
-					<section>
-						<pre><code>
-<div id="menu">
- <a [routerLink]="['/Home']" class="btn">Home</a>
- <a [routerLink]="['/About']" class="btn">About</a>
- <a [routerLink]="['/Experiments']" class="btn">Experiments</a>
-</div>
-						</code></pre>
-						<pre class="fragment"><code>
-export class App {
- constructor(private _router: Router) {}
- navigate(route) {
- this._router.navigate([`/${route}`]);
- }
-}
-						</code></pre>
-					</section>
-					<section>
-						<h2>Query Parameters</h2>
-						<ul>
-							<li>Denotes an optional value for a particular route</li>
-							<li>Do not add query parameters to the route definition { path:'/users', name: UserDetail, component: UserDetail }</li>
-							<li>Add as a parameter to the routerLink template expression just like router params: <a [routerLink]="['Users', {id: 7}]"> {{user.name}} </a></li>
-							<li>Also accessed by injecting RouteParams into a component</li>
-						</ul>
-					</section>
-					<section>
-						<pre><code>
-<div>
- <button [routerLink]="['./MyComponent', {id: 1}]">
- My Component Link</button>
- <button [routerLink]="['./AnotherComponent', {queryParam: 'bar'}]">
- Another Component Link</button>
-</div>
-						</code></pre>
-					</section>
-					<section>
-						<pre><code>
-import { Component } from 'angular2/core';
-import { RouteParams } from 'angular2/router';
-@Component({
- selector: 'my-component',
- template: `<h1>my component ({{routeParams.get('id')}})!</h1>`
-})
-export class MyComponent {
- constructor(routeParams: RouteParams) {
- this.routeParams = routeParams;
- }
-}
-						</code></pre>
-					</section>
-					<section>
-						Child Routes
-• Ideal for creating reusable components
-• Components with child routes are “ignorant” of the
-parents’ route implementation
-• In the parent route config, end the path with /…
-• In the child config, set the path relative to the parent
-path
-• If more than one child route, make sure to set the
-default route
-					</section>
-					<section>
-						<pre><code>
-@RouteConfig([
- {
- path:'/another-component/...',
- name: 'AnotherComponent',
- component: AnotherComponent
- }
-])
-export class App {}
-@RouteConfig([
- {
- path:'/first',
- name: 'FirstChild',
- component: FirstSubComponent
- }
-])
-export class AnotherComponent {}
-						</code></pre>
-					</section> -->
+					
 				</section>
 		</div>
 
