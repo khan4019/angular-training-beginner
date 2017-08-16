@@ -76,15 +76,18 @@
 					</ul>
 				</section>
 				<section>
+						<h2>Jump from 14,000ft </h2>
 					<img src="./images/others/jump.JPG" alt="">
 				</section>
 				<!-- <section>
 					<img src="./images/others/skydiving.JPG" alt="">
 				</section> -->
 				<section>
+						<h2>Chicago Marathon 2016</h2>
 					<img src="./images/others/marathon.jpg" alt="">
 				</section>
 				<section>
+						<h2>10,000 volts</h2>
 					<img src="./images/others/mudder.jpg" alt="">
 				</section>
 			</section>
@@ -106,7 +109,7 @@
 				<section>
 					<h2>How many of you</h2>
 					<ul>
-						<li class="fragment">Build an angular app in production</li>
+						<li class="fragment">Build an angular2+ app in production</li>
 						<li class="fragment">Angular2+ more than a year</li>
 						<li class="fragment">Familiar with Redux</li>
 						<li class="fragment">Uses Ngrx (new or older version)</li>
@@ -191,7 +194,6 @@ ng serve
 					<h2>Action</h2>
 					<ul>
 						<li>Actions</li>
-						<li>Action Creator</li>
 						
 					</ul>
 					<pre><code class="hljs JavaScript">
@@ -199,12 +201,6 @@ ng serve
   type: 'ADD_TODO',
   text: 'Take 8 bathroom breaks'
 }
-					</code></pre>
-					<pre class="fragment"><code class="hljs javascript">
-const addTodo = text => ({
-  type: 'ADD_TODO',
-  text
-})
 					</code></pre>
 					<li class="fragment">dispatch action</li>
 					<aside class="notes">
@@ -222,6 +218,16 @@ const addTodo = text => ({
 				<section>
 					<h2 style="color:red">Actually state will not change</h2>
 					<h4 class="fragment">we will create a new state with the change</h4>
+					<pre class="hljs javascript fragment"><code>
+function add(x, y){
+  return x + y;
+}
+					</code></pre>
+					<pre class="hljs fragment javascript" data-trim><code>
+add(1, 2); // output is 3
+add(1, 2); // output still is 3
+add(1, 2); // WILL ALWAYS output 3
+					</code></pre>
 				</section>
 				<section>
 					<img src="./images/ngrx/stateChange8.png" alt="">
@@ -262,38 +268,7 @@ case ADD_TODO:
 					</ul>
 				</section>
 			</section>
-				<section>
-					<section>
-                        <h2>Why ngRx</h2>
-                        <blockquote>"Redux is hard for simple problem and simple for hard problem"- some guy</blockquote>
-                    </section>
-                    <section>
-                        <h2>Purpose of ngrx</h2>
-                        <ul>
-                            <li>Share state among components</li>
-                            <li>Organize user actions</li>
-							<li>Cleanly defined what is changed due to what</li>
-							<li>Feel like a Nerd</li>
-                        </ul>
-                    </section>
-				</section>
-                <!-- <section>
-                    <section>
-                        <h1>Agenda</h1>
-                    </section>
-                    <section>
-						<ul>
-							<li>Basic building blocks</li>
-							<li>Observable and async pipe</li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-                        <br><br>
-                        <a href="https://egghead.io/lessons/angular-2-render-an-observable-with-the-async-pipe">observable</a>
-                    </section>
-                </section> -->
-				<section>
+			<section>
 					<section>
 							<h2>Basic Building Block</h2>
 							<ul>
@@ -306,7 +281,51 @@ case ADD_TODO:
 					</section>
 				</section>
 				<section>
-					<h2>See ngrx in action</h2>
+						<h2>See ngrx in action</h2>
+					</section>
+				<section>
+					<section>
+                        <h2>Why ngRx</h2>
+                        <blockquote>"Ngrx is hard for simple problem and simple for hard problem"- some guy</blockquote>
+                    </section>
+                    <section>
+                        <h2>Purpose of ngrx</h2>
+                        <ul>
+                            <li>Share state among components</li>
+                            <li>Organize user actions</li>
+							<li>Cleanly defined what is changed due to what</li>
+							<li>pure function makes it easier to test</li>
+							<li>Feel like a Nerd</li>
+                        </ul>
+                    </section>
+				</section>
+                <section>
+					<section>
+						<h2>Large ngrx app</h2>
+					</section>
+					<section>
+						<h2>Load data</h2>
+						<ul>
+							<li>have side effect</li>
+							<li>is not pure function</li>
+							<li>use: @ngrx/effect</li>
+							<li>similar to redux-saga</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Component Architecture</h2>
+						<ul>
+							<li>Container component</li>
+							<li>Presentation component</li>
+						</ul>
+					</section>
+					<section>
+						<h2>More...</h2>
+						<ul>
+							<li>@ngrx/store-devtools</li>
+							<li>@ngrx/router-store </li>
+						</ul>
+					</section>
 				</section>
 				<section>
 					<h2>References</h2>
@@ -323,7 +342,7 @@ case ADD_TODO:
 						<li>Build an <a href="https://ema-john.firebaseapp.com/">e-commerce site</a> </li>
 						<li>Email: <span style="color:lightcoral">khan4019@gmail.com</span> </li>
 					</ul>
-					<img style="height:350px;" src="./img/others/workshop1.jpg" alt="">
+					<img style="height:350px;" src="./images/others/workshop1.jpg" alt="">
 				</section>
 				<section>
 					<h1>Thank you</h1>
