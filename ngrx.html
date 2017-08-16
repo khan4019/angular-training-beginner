@@ -101,13 +101,171 @@
 						<li class="fragment">Pro in RxJS</li>
 						<li class="fragment">Redux Nerd</li>
 					</ul>
-					<h5 style="color:purple" class="fragment">If all is true, come and tell us your secret</h5>
+					<!-- <h5 style="color:purple" class="fragment">If all is true, come and tell us your secret</h5> -->
 				</section>
-            </section>
+				<section>
+					<h2>How many of you</h2>
+					<ul>
+						<li class="fragment">Build an angular app in production</li>
+						<li class="fragment">Angular2+ more than a year</li>
+						<li class="fragment">Familiar with Redux</li>
+						<li class="fragment">Uses Ngrx (new or older version)</li>
+						<li style="color:purple" class="fragment">How many people are here</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Angular2+ app</h2>
+				</section>
+				<section>
+					<h3>Create app by using ng-cli</h3>
+					<pre><code class="hljs batch">
+npm install -g @angular/cli
+
+ng new bangular-bank
+
+cd bangular-bank
+
+ng serve
+					</code></pre>						
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>How we manage state</h2>
+				</section>
+				<section>
+					<img src="./images/ngrx/componentTree1.png" alt="">
+				</section>
+				<section>
+					<img src="./images/ngrx/componentTree2.png" alt="">
+				</section>
+				<section>
+					<img src="./images/ngrx/componentTree3.png" alt="">
+				</section>
+				<section>
+					<img src="./images/ngrx/componentTree5.png" alt="">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>What if we put them in one place</h2>
+				</section>
+				<section>
+					<img src="./images/ngrx/centralState1.png" alt="">
+				</section>
+				<section>
+					<img src="./images/ngrx/centralState2.png" alt="">
+				</section>
+				<section>
+					<img src="./images/ngrx/centralState3.png" alt="">
+				</section>
+				<section>
+					<img src="./images/ngrx/centralState4.png" alt="">
+				</section>
+				<section>
+					<img src="./images/ngrx/centralState5.png" alt="">
+				</section>
+				<section>
+					<h2>Store</h2>
+					<ul>
+						<li>Holds application state</li>
+						<li>Only one store for all its application state</li>
+						<li>Single source of truth</li>
+					</ul>
+				</section>
+				<section>
+					<img src="./images/redux/solve2.png" alt="">
+				</section>
+
+			</section>
+			<section>
+				<section>
+					<h2>How will we change the state?</h2>
+				</section>
+				<section>
+					<img src="./images/ngrx/centralState6.png" alt="">
+				</section>
+				<section>
+					<h2>Action</h2>
+					<ul>
+						<li>Actions</li>
+						<li>Action Creator</li>
+						
+					</ul>
+					<pre><code class="hljs JavaScript">
+{
+  type: 'ADD_TODO',
+  text: 'Take 8 bathroom breaks'
+}
+					</code></pre>
+					<pre class="fragment"><code class="hljs javascript">
+const addTodo = text => ({
+  type: 'ADD_TODO',
+  text
+})
+					</code></pre>
+					<li class="fragment">dispatch action</li>
+					<aside class="notes">
+						<p>Actions are plain JavaScript objects. Actions must have a type property that indicates the type of action being performed. </p>
+					</aside>
+				</section>
+				<section>
+					<img src="./images/ngrx/centralState7.png" alt="">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>But you didn't tell how state will change?</h2>
+				</section>
+				<section>
+					<h2 style="color:red">Actually state will not change</h2>
+					<h4 class="fragment">we will create a new state with the change</h4>
+				</section>
+				<section>
+					<img src="./images/ngrx/stateChange8.png" alt="">
+				</section>
+				<section>
+					<img src="./images/ngrx/stateChange9.png" alt="">
+				</section>
+				<section>
+					<h2>reducer</h2>
+					<ul>
+						<li>Actions describe the fact that something happened</li>
+						<li>Action don't specify how the application's state should change</li>
+						<li class="fragment">How state will change will be defined by <strong>reducer</strong></li>
+					</ul>
+					<pre class="fragment"><code>
+case ADD_TODO:
+  return [
+    ...state,
+   {
+     text: action.text,
+     completed: false
+   }
+]
+					</code></pre>
+				</section>
+				<section>
+					<h2>reducer</h2>
+					<img src="./images/redux/reducer.png" alt="">
+				</section>
+				<section>
+					<h2>Data Flow</h2>
+					<ul>
+						<li>Action is a plain object describing what happened</li>
+						<li class="fragment">Call store.dispatch(action) from anywhere in your app</li>
+						<li class="fragment">Store calls the reducer function you gave for the given action</li>
+						<li class="fragment">In root reducer you may combine multiple reducers into a single state tree</li>
+						<li class="fragment">Store saves the complete state tree returned by the root reducer</li>
+					</ul>
+				</section>
+			</section>
 				<section>
 					<section>
                         <h2>Why ngRx</h2>
-                        <blockquote>Redux is hard for simple problem and simple for hard problem</blockquote>
+                        <blockquote>"Redux is hard for simple problem and simple for hard problem"- some guy</blockquote>
                     </section>
                     <section>
                         <h2>Purpose of ngrx</h2>
@@ -143,290 +301,35 @@
 								<li>Action</li>
 								<li>Dispatch</li>
 								<li>Reducer</li>
+								<li>Effect</li>
 							</ul>
-							
-					</section>
-					<section>
-							<h2>Store</h2>
-							<ul>
-								<li>Holds application state</li>
-								<li>Only one store for all its application state</li>
-								<li>Single source of truth</li>
-							</ul>
-						</section>
-						<section>
-							<img src="./images/redux/solve2.png" alt="">
-						</section>
-						<section>
-							<h2>Action</h2>
-							<ul>
-								<li>Actions</li>
-								<li>Action Creator</li>
-								
-							</ul>
-							<pre><code class="hljs JavaScript">
-{
-  type: 'ADD_TODO',
-  text: 'Take 8 bathroom breaks'
-}
-							</code></pre>
-							<pre class="fragment"><code class="hljs javascript">
-const addTodo = text => ({
-  type: 'ADD_TODO',
-  text
-})
-							</code></pre>
-							<li class="fragment">dispatch action</li>
-							<aside class="notes">
-								<p>Actions are plain JavaScript objects. Actions must have a type property that indicates the type of action being performed. </p>
-							</aside>
-						</section>
-						<section>
-							<h2>reducer</h2>
-							<ul>
-								<li>Actions describe the fact that something happened</li>
-								<li>Action don't specify how the application's state should change</li>
-								<li class="fragment">How state will change will be defined by <strong>reducer</strong></li>
-							</ul>
-							<pre class="fragment"><code>
-case ADD_TODO:
-	return [
-		...state,
-		{
-			text: action.text,
-			completed: false
-		}
-	]
-							</code></pre>
-						</section>
-						<section>
-							<h2>reducer</h2>
-							<img src="./images/redux/reducer.png" alt="">
-						</section>
-						<section>
-							<h2>Data Flow</h2>
-							<ul>
-								<li>Action is a plain object describing what happened</li>
-								<li class="fragment">Call store.dispatch(action) from anywhere in your app</li>
-								<li class="fragment">Store calls the reducer function you gave for the given action.</li>
-								<li class="fragment">In root reducer you may combine multiple reducers into a single state tree</li>
-								<li class="fragment">Store saves the complete state tree returned by the root reducer</li>
-							</ul>
-						</section>
-						
-				</section>
-
-				<section>
-					<section>
-						<h2>Create your first app</h2>
-					</section>
-					<section>
-						<h2>Angular cli</h2>
-						<ul>
-							<li>Command line tool for Angular app</li>
-							<li>Makes it easy to create an angular application</li>
-							<li>Follow all the best practices</li>
-							<li>Generate components, routes, services and pipes with a simple command.</li>
-							<li>Easy to run, build, deploy and test</li>
-							<li>Go to angular cli <a href="https://github.com/angular/angular-cli#installation">installation link</a> </li>
-							
-						</ul>
-					</section>
-					<section>
-						<h3>Task 1: Just 4 commands</h3>
-						<pre><code class="hljs batch">
-npm install -g @angular/cli
-
-ng new bangular-bank
-
-cd bangular-bank
-
-ng serve
-						</code></pre>						
-					</section>
-					<section>
-						<h3>Other ng new settings</h3>
-						<ul>
-							<li>--style=scss</li>
-							<li>--minimal=true</li>							
-						</ul>
-						<br>
-						<br>
-						<a href="https://github.com/angular/angular-cli/wiki/new">ng-new doc</a>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>TypeScript</h2>
-						<pre><code class="hljs typescript">
-function add(a: number, b: number) {
-  return a + b;
-}
-
-add(1, 3);   // returns 4
-add(1, '3'); // causes a compiler error
-						</code></pre>
-					</section>
-					<!-- <section>
-						<h2></h2>
-						<pre><code class="hljs typescript">
-class TodoItems {
-  items: string[];  // or Array of string
-
-  constructor(initialItems: string[]) {
-    this.items = initialItems;
-  }
-
-  empty(): boolean {
-    return this.items.length == 0;
-  }
-}
-
-const allItems = new TodoItems(['install NPM', 'install Node']);
-						</code></pre>
-					</section>
-					<section>
-						<h2>Interface</h2>
-						<pre><code>
-export interface IDogData {
-  name?: string;
-  breed?: string;
-  age?: number;
-}
-						</code></pre>
-					</section>
-					<section>
-						<pre><code>
-export class Dog {
-  name: string;
-  breed: string;
-  age: number;
-
-  constructor(data: IDogData) {
-    this.name = data.name;
-    this.breed = data.breed;
-    this.age = data.age;
-  }
-}
-
-const dog = new Dog({ name: 'Bear', breed: 'Border Collie', age: 4 });
-						</code></pre>
-					</section> -->
-				</section>
-				<section>
-					<section>
-						<h1>Templating</h1>
-						<pre><code class="hljs html">
-<div class="todo" (click)="taskDone()">
- <h3>{{ todo.name }}</h3>
- <p>{{ todo.description }}</p>
- <p><strong>{{todo.completed}}</strong></p>
- </div>
-						</code></pre>
-					
-						<pre class="fragment"><code>
-<app-todo *ngFor="let todo of todos"
-
- [todo]="todo">
-</app-todo>
-						</code></pre>
 					</section>
 				</section>
 				<section>
-					<section>
-						<h2>ES6</h2>
-					</section>
-					<section>
-						<h2>imports</h2>
-						<p>Makes the blocks of functionality available in the imported modules available to the contents of this module</p>
-						<pre><code>
-import { Component, OnInit } from '@angular/core';
-import { Dog } from '../dog';
-						</code></pre>
-					</section>
+					<h2>See ngrx in action</h2>
 				</section>
-				<section>
-					<section>
-						<h1>Component</h1>
-					</section>
-					<section>
-						<h2>What is a component</h2>
-						<ul>
-							<li>Building Block</li>
-							<li>Repeating block</li>
-							<li>Component grouped together</li>
-							<li>Large component broken down into pieces</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Create a component</h2>
-						<pre><code class="hljs shell">
-ng generate component user
-ng g c user
-						</code></pre>
-						<img src="images/component1.png" alt="">
-					</section>
-					<section>
-						<img src="images/component2.png" alt="">
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Services</h1>
-					</section>		
-					<section>
-						<h2>What services do</h2>
-						<ul>
-							<li>A service is just a javascript class</li>
-							<li>Takes heavy funcationality out of component</li>
-							<li>Hold common funcationality among components</li>
-							<li>Load data from server</li>
-							<li>Decorate with @Injectable when we need to inject dependencies into our service</li>
-						</ul>
-					</section>	
-					<section>
-						<h2>Task 3: create a service</h2>
-						<pre><code>ng g s github\github</code></pre>
-						<img src="images/service1.png" alt="">
-					</section>
-					<section>
-						<img src="images/service2.png" alt="">
-					</section>					
-				</section>
-				<section>
-					<section>
-						<h2>RxJS</h2>
-						<ul>
-							<li>Library for reactive programming</li>
-							<li>Array-like methods for dealing with async streams</li>
-							<li>Used heavily in Angular..specially in service</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Observable</h2>
-						<pre><code class="hljs typescript">
-import { Observable } from 'rxjs/Observable';
-
-Observable.create(observer => {
-  observer.next(42);
-})
-  .subscribe((value: number) => {
-    console.log(value); // 42
-  });
-						</code></pre>						
-					</section>
-				</section>
-
 				<section>
 					<h2>References</h2>
 					<ul>
 						<li><a href="https://gist.github.com/btroncone/a6e4347326749f938510">Comprehensive Introduction to @ngrx/store</a></li>
 						<li><a href="https://www.youtube.com/watch?v=cyaAhXHhxgk">From Inactive to Reactive</a></li>
 						<li><a href="https://github.com/CodeSequence/ngrx-workshop">ngrx workshop</a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
 					</ul>
+				</section>
+				<section>
+					<h2>Learn react by building</h2>
+					<ul>
+						<li><a href="http://thatjsdude.com/workshops/react/mn.html">ReactJS Workshop for beginners</a></li>
+						<li>Build an <a href="https://ema-john.firebaseapp.com/">e-commerce site</a> </li>
+						<li>Email: <span style="color:lightcoral">khan4019@gmail.com</span> </li>
+					</ul>
+					<img style="height:350px;" src="./img/others/workshop1.jpg" alt="">
+				</section>
+				<section>
+					<h1>Thank you</h1>
+					<p>Email: <span style="color:lightcoral">khan4019@gmail.com</span></p>
+					<p><strong style="color:purple">@jsdude005</strong></p>
+					<p><small >www.thatJSDude.com</small></p>
 				</section>
 		</div>
 
