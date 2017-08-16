@@ -249,33 +249,21 @@ add(1, '3'); // causes a compiler error
 						<h2>Templating</h2>
 						
 						<pre><code class="hljs html">
-<div class="todo" (click)="taskDone()">
- <h3>{{ todo.name }}</h3>
- <p>{{ todo.description }}</p>
- <p><strong>{{todo.completed}}</strong></p>
- </div>
-						</code></pre>
-						<pre class="fragment"><code>
-<app-todo *ngFor="let todo of todos"
+<p>
+  {{happyText}}
+</p>
 
- [todo]="todo">
-</app-todo>
+<button (click)="makeMeHappier()">Make me happier</button>
+
+<ul>
+  <li *ngFor="let user of users">
+    <a href={{user.html_url}}>{{user.login}}</a>
+  </li>
+</ul>
 						</code></pre>
 					</section>
 				</section>
-				<section>
-					<section>
-						<h2>ES6</h2>
-					</section>
-					<section>
-						<h2>imports</h2>
-						<p>Makes the blocks of functionality available in the imported modules available to the contents of this module</p>
-						<pre><code>
-import { Component, OnInit } from '@angular/core';
-import { Dog } from '../dog';
-						</code></pre>
-					</section>
-				</section>
+				
 				
 				<section>
 					<section>
@@ -284,10 +272,7 @@ import { Dog } from '../dog';
 					<section>
 						<h2>create a service</h2>
 						<pre><code>ng g s github\github</code></pre>
-						<img src="images/service1.png" alt="">
-					</section>
-					<section>
-						<img src="images/service2.png" alt="">
+						<img src="./images/githubService.png" alt="">
 					</section>					
 				</section>
 				<section>
@@ -295,9 +280,28 @@ import { Dog } from '../dog';
 						<h2>Load Data from server</h2>
 					</section>
 					<section>
-						<img src="images/service4.png" alt="">
+						<img src="./images/loadData.png" alt="">
+					</section>
+					<section>
+						<img src="./images/loadDataModule.png" alt="">
 					</section>
 				</section>
+				<section>
+						<section>
+							<h2>ES6</h2>
+						</section>
+						<section>
+							<h2>imports</h2>
+							<p>Makes the blocks of functionality available in the imported modules available to the contents of this module</p>
+							<pre><code>
+import {Http} from '@angular/http';
+	
+import { GithubService} from '../services/github.service';
+	
+import {HttpModule} from '@angular/http';
+							</code></pre>
+						</section>
+					</section>
 				<section>
 					<section>
 						<h2>RxJS</h2>
@@ -313,18 +317,8 @@ import { Dog } from '../dog';
 						<h2>Observable</h2>
 						<pre><code class="hljs typescript">
 import { Observable } from 'rxjs/Observable';
-
-Observable.create(observer => {
-  observer.next(42);
-})
-  .subscribe((value: number) => {
-    console.log(value); // 42
-  });
+import 'rxjs/add/operator/map';
 						</code></pre>						
-					</section>
-					<section>
-						<h2>Load Data</h2>
-						<img src="images/service3.png" alt="">
 					</section>
 				</section>
 				<section>
