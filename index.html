@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Functional Programming: What Why and How</title>
+	<title>Angular for absolute beginners</title>
 
 	<meta name="description" content="An introductory talk for funcational programming in JavaScript">
 	<meta name="author" content="That JS Dude">
@@ -48,65 +48,74 @@
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 			<section>
-				<img src="images/gdi.png" height="200px" alt="">
 				<h2>Angular for Absolute Beginner</h2>
 				<br>
 				<br>
+				<p class="fragment"><a href="https://goo.gl/pdio1i">Just twitted the slides <strong style="color:purple">@jsdude005</strong></a></p>
+				<br>
+				<br>
 				<p>
-					<small><a href="http://thatjsdude.com">Jhankar Mahbub</a> / <a href="http://twitter.com/jsdude005">@jsdude005</a></small>
+					<a href="http://thatjsdude.com">ThatJSDude.com</a> / <a href="http://twitter.com/jsdude005">@jsdude005</a>
+				</p>
+				<p>
+					<small><a href="http://www.youtube.com/c/ThatJSDude">youtube.com/c/ThatJSDude </a></small>
 				</p>
 			</section>
 			<section>
-				<h2>Goal</h2>
+				<h2>Goal for you</h2>
 				<ul>
 					<li>Getting started with Angular</li>
 					<li>Core Concpets and Building Blocks</li>
-					<li>Build a functional app with Angular</li>
+                    <li>Build a functional app with Angular</li>
+                    <li>Angular means Angular2+</li>
 				</ul>
-			</section>
-			<section>
-					<section>
-						<h2>How your day will look like</h2>						
-					</section>
-					<section>
-						<h2>Morning</h2>
-						<ul>
-							<li>9.30-10.00: Why angular and Angular building blocks</li>
-							<li>10.00-10.20: ng cli and create your first app</li>
-							<li>10.20-10.30: Intro to TypeScript</li>
-							<li>10.30-10.50: Add components</li>
-							<li>10.50-11.00: break</li>
-							<li>11.00-11.40: data binding event handling and pipes</li>
-							<li>11.40-12.00: Modules</li>
-							<li>12.00-1.00: Lunch break</li>
-						</ul>
-					</section>
-					<section>
-						<h2>After Lunch</h2>
-						<ul>
-							<li>1.00-1.30: RxJS and Service</li>
-							<li>1.30-2.00: Install and apply Material Design</li>
-							<li>2.00-2.30: Create componet with md-card</li>
-							<li>2.30-2.45: QA</li>
-							<li>2.45-3.00: Small break</li>
-						</ul>
-					</section>
-					<section>
-						<h2>After Snacks</h2>
-						<ul>
-							<li>3.00-3.30: Angular router</li>
-							<li>3.30-4.00: Pass router data and Auth guard</li>
-							<li>4.00-4.20: Pass data to child component</li>
-							<li>4.30-4.40: Managing state</li>
-							<li>4.40-5.00: Final QA</li>
-						</ul>
-					</section>
+            </section>
+            <section>
+				<section>
+					<h2>Who is</h2>
+					<h1>JS   Dude?</h1>
 				</section>
-
+				<section>
+					<img src="./images/others/dude.jpeg" alt="">
+					<ul>
+						<li style="color:purple"><strong>@jsdude005</strong></li>
+						<li>Organize Chicago JavaScript meetup</li>
+						<li>Sr. Web Developer, Nielsen</li>
+						<li>Enjoy Learning, talking about JavaScript</li>
+						<!-- <li>Twin Cities code camp in 2013, 2014</li> -->
+					</ul>
+				</section>
+				<section>
+					<h2>Jump from 14,000ft </h2>
+					<img src="./images/others/jump.JPG" alt="">
+				</section>
+				<!-- <section>
+					<img src="./images/others/skydiving.JPG" alt="">
+				</section> -->
+				<section>
+					<h2>Chicago Marathon 2016</h2>
+					<img src="./images/others/marathon.jpg" alt="">
+				</section>
+				<section>
+					<h2>10,000 volts</h2>
+					<img src="./images/others/mudder.jpg" alt="">
+				</section>
+			</section>
+			</section>
 				<section>
 					<section>
 						<h2>Why Angular</h2>
-					</section>
+                    </section>
+                    <section>
+                        <h2>Why Angular</h2>
+                        <ul>
+                            <li class="fragment">Your manager said so</li>
+                            <li class="fragment">You are Angular1 veterans</li>
+                            <li class="fragment">Live in a .Net world</li>
+                            <li class="fragment">Trust google and MS ecosystem</li>
+                            <li class="fragment">Love full package</li>
+                        </ul>
+                    </section>
 				</section>
 				<section>
 					<h2>Setup & Pre requisite</h2>
@@ -114,21 +123,27 @@
 						<li>Latest Node: <a href="https://nodejs.org/en/download/">download link</a></li>
 						<li>Visual Studio Code: <a href="https://code.visualstudio.com/download">download link</a></li>
 					</ul>
+                </section>
+                <section>
+                    <section>
+                        <h1>Agenda</h1>
+                    </section>
+                    <section>
+                        <h2>Four parts</h2>
+                        <ul>
+                            <li class="fragment">Resume Driven Development</li>
+                            <li class="fragment">Google Driven Development</li>
+                            <li class="fragment">Manager Yell Driven Development</li>
+                            <li class="fragment">Production Broken Driven Development</li>
+                        </ul>
+                    </section>
 				</section>
 				<section>
-					<h2>Building Block</h2>
-					<ul>
-						<li>Component</li>
-						<li>Service</li>
-						<li>Directive</li>
-						<li>Module</li>
-						<li>Template & Data Binding</li>
-						<li>Routes</li>
-						<li>Http Client</li>
-						<li>Testing</li>
-					</ul>
+					<section>
+						<h1>Part 1</h1>
+						<h4>Resume Driven Development</h4>
+					</section>
 				</section>
-
 				<section>
 					<section>
 						<h2>Create your first app</h2>
@@ -147,11 +162,14 @@
 					</section>
 					<section>
 						<h3>Task 1: Just 4 commands</h3>
-						<pre><code class="hljs javascript">
-							npm install -g @angular/cli
-							ng new bangular-bank
-							cd bangular-bank
-							ng serve
+						<pre><code class="hljs batch">
+npm install -g @angular/cli
+
+ng new bangular-bank
+
+cd bangular-bank
+
+ng serve
 						</code></pre>						
 					</section>
 					<section>
@@ -164,140 +182,24 @@
 						<br>
 						<a href="https://github.com/angular/angular-cli/wiki/new">ng-new doc</a>
 					</section>
-					<section>
-						<h2>See what inside</h2>
-						<img src="images/basic-app-structure1.png" alt="">
-					</section>
-					<section>
-						<h2>Inside src </h2>
-						<img src="images/basic-app-structure2.png" alt="">
-					</section>
-					<section>
-						<h2>Inside App</h2>
-						<img src="images/basic-app-structure3.png" alt="">
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h2>TypeScript</h2>
-						<pre><code class="hljs typescript">
-function add(a: number, b: number) {
-  return a + b;
-}
-
-add(1, 3);   // returns 4
-add(1, '3'); // causes a compiler error
-						</code></pre>
-					</section>
-					<section>
-						<h2></h2>
-						<pre><code class="hljs typescript">
-class TodoItems {
-  items: string[];  // or Array of string
-
-  constructor(initialItems: string[]) {
-    this.items = initialItems;
-  }
-
-  empty(): boolean {
-    return this.items.length == 0;
-  }
-}
-
-const allItems = new TodoItems(['install NPM', 'install Node']);
-						</code></pre>
-					</section>
-					<!-- <section>
-						<h2>Interface</h2>
-						<pre><code>
-export interface IDogData {
-  name?: string;
-  breed?: string;
-  age?: number;
-}
-						</code></pre>
-					</section>
-					<section>
-						<pre><code>
-export class Dog {
-  name: string;
-  breed: string;
-  age: number;
-
-  constructor(data: IDogData) {
-    this.name = data.name;
-    this.breed = data.breed;
-    this.age = data.age;
-  }
-}
-
-const dog = new Dog({ name: 'Bear', breed: 'Border Collie', age: 4 });
-						</code></pre>
-					</section> -->
 				</section>
 				<section>
 					<section>
-						<h1>Templating</h1>
-						<h2>Data binding</h2>
+						<h1>Part 2</h1>
+						<h4>Google Driven Development</h4>
 					</section>
 					<section>
-						<h2>Templating</h2>
+						<h2>Building Block</h2>
 						<ul>
-							<li>A template is HTML that tells Angular how to render a component</li>
-							<li>Templates include data bindings as well as other components and directives</li>
-							<li>Angular leverages native DOM events and properties which dramatically reduces the need for a ton of builtin directives</li>
-							<li>Angular leverages shadow DOM to do some really interesting things with view encapsulation</li>
+							<li>Component</li>
+							<li>Service</li>
+							<li>Load data from server</li>
+							<li>Module</li>
+							<li>Template & Data Binding</li>
+							<li>Little touch on Typescript</li>
+							<li>Little touch on ES6</li>
 						</ul>
-					</section>
-					<section>
-						<h2>Data Binding</h2>
-						<ul>
-							<li>Enables data to flow from the component to template and vice-versa</li>
-							<li>Includes interpolation, property binding, event binding, and two-way binding</li>
-							<li>The binding syntax has expanded but the result is a much smaller framework footprint</li>
-						</ul>
-					</section>
-					<section>
-						<pre><code class="hljs html">
-<div class="todo" (click)="taskDone()">
- <h3>{{ todo.name }}</h3>
- <p>{{ todo.description }}</p>
- <p><strong>{{todo.completed}}</strong></p>
- </div>
-						</code></pre>
-					</section>
-					<section>
-						<pre><code>
-<app-todo *ngFor="let todo of todos"
-
- [todo]="todo">
-</app-todo>
-<div>
-   <form class="form-inline">
-   	<input type="text"
- [(ngModel)]="name" placeholder="things you want to do">
-   	<input type="text"
- [(ngModel)]="description" placeholder="task description">
- 	<button type="submit" (click)="addTodo(name, description)">Add Todo
- 	</button>
-</form>
-</div>
-						</code></pre>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>ES6</h2>
-					</section>
-					<section>
-						<h2>imports</h2>
-						<p>Makes the blocks of functionality available in the imported modules available to the contents of this module</p>
-						<pre><code>
-import { Component, OnInit } from '@angular/core';
-import { Dog } from '../dog';
-						</code></pre>
+						<h4 class="fragment" style="color:red">All in one hour! Are you crazy :'(</h4>
 					</section>
 				</section>
 				<section>
@@ -324,127 +226,115 @@ ng g c user
 					<section>
 						<img src="images/component2.png" alt="">
 					</section>
-					<section>
-						<h2>Component Decorator</h2>
-						<ul>
-							<li>@Component is a decorator that adds metadata to the AppComponent class</li>
-							<li>selector tells Angular to use this class to fill in uses of &lt;app-user&gt;&lt;/app-user&gt;</li>
-							<li>templateUrl tells it where to find the HTML to use for filling in</li>
-							<li>styleUrls is a list of CSS style files to apply to this component</li>
-						</ul>						
-					</section>
-					<section>
-						<h2>Including component</h2>
-						<pre><code class="hljs html">
-<h1>
-  {{title}}
-</h1>
-<app-user></app-user>
-						</code></pre>
-						<ul>
-							<li>in app.component.ts add &lt;app-user&gt;&lt;/app-user&gt;</li>							
-						</ul>
-					</section>
-					<section>
-						<h2>Task 2: use template</h2>
-						<ul>
-							<li>add userName property in user.component.ts</li>
-							<li>add template to display userName</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Task 3: bind an array</h2>
-						<ul>
-							<li>Create a property with users</li>
-							<li>display user name in a list</li>
-						</ul>
-					</section>
-					<!-- <section>
-						<h2>Things need to import</h2>
-						<ul>
-							<li>Import the core Angular dependencies</li>
-							<li>Import 3rd party dependencies</li>
-							<li>Import your custom dependencies</li>
-							<li>This approach gives us a more fine-grained control over the managing our dependencies</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Types of Component</h2>
-						<ul>
-							<li>Fature Component</li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</section> -->
 				</section>
+				<section>
+					<section>
+						<h2>TypeScript</h2>
+						<pre><code class="hljs typescript">
+function add(a: number, b: number) {
+  return a + b;
+}
+
+add(1, 3);   // returns 4
+add(1, '3'); // causes a compiler error
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Templating</h2>
+						<h4>Data binding</h4>
+					</section>
+					<section>
+						<h2>Templating</h2>
+						
+						<pre><code class="hljs html">
+<p>
+  {{happyText}}
+</p>
+
+<button (click)="makeMeHappier()">Make me happier</button>
+
+<ul>
+  <li *ngFor="let user of users">
+    <a href={{user.html_url}}>{{user.login}}</a>
+  </li>
+</ul>
+						</code></pre>
+					</section>
+				</section>
+				
+				
 				<section>
 					<section>
 						<h1>Services</h1>
 					</section>		
 					<section>
-						<h2>What services do</h2>
-						<ul>
-							<li>A service is just a javascript class</li>
-							<li>Takes heavy funcationality out of component</li>
-							<li>Hold common funcationality among components</li>
-							<li>Load data from server</li>
-							<li>Decorate with @Injectable when we need to inject dependencies into our service</li>
-						</ul>
-					</section>	
-					<section>
-						<h2>Task 3: create a service</h2>
+						<h2>create a service</h2>
 						<pre><code>ng g s github\github</code></pre>
-						<img src="images/service1.png" alt="">
-					</section>
-					<section>
-						<img src="images/service2.png" alt="">
+						<img src="./images/githubService.png" alt="">
 					</section>					
 				</section>
 				<section>
 					<section>
-						<h1>Load Data from server</h1>
+						<h2>Load Data from server</h2>
 					</section>
 					<section>
-						<img src="images/service4.png" alt="">
+						<img src="./images/loadData.png" alt="">
 					</section>
+					<section>
+						<img src="./images/loadDataModule.png" alt="">
+					</section>
+				</section>
+				<section>
+						<section>
+							<h2>ES6</h2>
+						</section>
+						<section>
+							<h2>imports</h2>
+							<p>Makes the blocks of functionality available in the imported modules available to the contents of this module</p>
+							<pre><code>
+import {Http} from '@angular/http';
+	
+import { GithubService} from '../services/github.service';
+	
+import {HttpModule} from '@angular/http';
+							</code></pre>
+						</section>
+					</section>
+				<section>
 					<section>
 						<h2>RxJS</h2>
-						<ul>
-							<li>Library for reactive programming</li>
-							<li>Array-like methods for dealing with async streams</li>
-							<li>Used heavily in Angular..specially in service</li>
-						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Library for reactive programming</li>
+								<li>Array-like methods for dealing with async streams</li>
+								<li>Used heavily in Angular..specially in service</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>Observable</h2>
 						<pre><code class="hljs typescript">
 import { Observable } from 'rxjs/Observable';
-
-Observable.create(observer => {
-  observer.next(42);
-})
-  .subscribe((value: number) => {
-    console.log(value); // 42
-  });
+import 'rxjs/add/operator/map';
 						</code></pre>						
 					</section>
+				</section>
+				<section>
 					<section>
-						<h2>Task 4: Load Data</h2>
-						<img src="images/service3.png" alt="">
+						<h2>Life of a developer</h2>
 					</section>
 					<section>
-						<h2>Task 5: Display Data</h2>
-						<ul>
-							<li>import service</li>
-							<li>Dependency injection of service</li>
-							<li>Call getuserDetail by providing a userId from ngOnInit</li>
-							<li>Set user Detail on a property</li>
-							<li>Bind user login and profile picture in the dom</li>
-						</ul>
+						<h2>Find the napper</h2>
 					</section>
 				</section>
-
+				<section>
+					<section>
+						<h1>Part 3</h1>
+						<h4>Manager Yell driven Development</h4>
+					</section>
+				</section>
 				<section>
 					<section>
 						<h2>Material Design</h2>
