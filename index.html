@@ -13,7 +13,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="shortcut icon" href="images/favicon.jpg">
+	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/serif.css" id="theme">
 	<link rel="stylesheet" type="text/css" href="css/extra-style.css">
@@ -61,15 +61,7 @@
 					<small><a href="http://www.youtube.com/c/ThatJSDude">youtube.com/c/ThatJSDude </a></small>
 				</p>
 			</section>
-			<section>
-				<h2>Goal for you</h2>
-				<ul>
-					<li>Getting started with Angular</li>
-					<li>Core Concpets and Building Blocks</li>
-                    <li>Build a functional app with Angular</li>
-                    <li>Angular means Angular2+</li>
-				</ul>
-            </section>
+		
             <section>
 				<section>
 					<h2>Who is</h2>
@@ -101,6 +93,14 @@
 					<img src="./images/others/mudder.jpg" alt="">
 				</section>
 			</section>
+			<section>
+				<h2>Now about you</h2>
+				<ul>
+					<li>Build Angular2 app</li>
+					<li>Watched some tutorial</li>
+					<li>comfortable with ES6, TS, RxJS</li>
+				</ul>
+			</section>
 			</section>
 				<section>
 					<section>
@@ -113,27 +113,21 @@
                             <li class="fragment">You are Angular1 veterans</li>
                             <li class="fragment">Live in a .Net world</li>
                             <li class="fragment">Trust google and MS ecosystem</li>
-                            <li class="fragment">Love full package</li>
+                            <li class="fragment">All best practices are put together</li>
                         </ul>
                     </section>
 				</section>
-				<section>
-					<h2>Setup & Pre requisite</h2>
-					<ul>
-						<li>Latest Node: <a href="https://nodejs.org/en/download/">download link</a></li>
-						<li>Visual Studio Code: <a href="https://code.visualstudio.com/download">download link</a></li>
-					</ul>
-                </section>
                 <section>
                     <section>
                         <h1>Agenda</h1>
                     </section>
                     <section>
-                        <h2>Four parts</h2>
+                        <h2>Five parts</h2>
                         <ul>
                             <li class="fragment">Resume Driven Development</li>
                             <li class="fragment">Google Driven Development</li>
-                            <li class="fragment">Manager Yell Driven Development</li>
+							<li class="fragment">Manager Yell Driven Development</li>
+							<li class="fragment">Bathroom break driven development</li>
                             <li class="fragment">Production Broken Driven Development</li>
                         </ul>
                     </section>
@@ -149,19 +143,7 @@
 						<h2>Create your first app</h2>
 					</section>
 					<section>
-						<h2>Angular cli</h2>
-						<ul>
-							<li>Command line tool for Angular app</li>
-							<li>Makes it easy to create an angular application</li>
-							<li>Follow all the best practices</li>
-							<li>Generate components, routes, services and pipes with a simple command.</li>
-							<li>Easy to run, build, deploy and test</li>
-							<li>Go to angular cli <a href="https://github.com/angular/angular-cli#installation">installation link</a> </li>
-							
-						</ul>
-					</section>
-					<section>
-						<h3>Task 1: Just 4 commands</h3>
+						<h3>Just 4 commands</h3>
 						<pre><code class="hljs batch">
 npm install -g @angular/cli
 
@@ -171,8 +153,19 @@ cd bangular-bank
 
 ng serve
 						</code></pre>						
+						<aside class="notes">
+								<ul>
+										<li>Command line tool for Angular app</li>
+										<li>Makes it easy to create an angular application</li>
+										<li>Follow all the best practices</li>
+										<li>Generate components, routes, services and pipes with a simple command.</li>
+										<li>Easy to run, build, deploy and test</li>
+										<li>Go to angular cli <a href="https://github.com/angular/angular-cli#installation">installation link</a> </li>
+										
+									</ul>
+						</aside>
 					</section>
-					<section>
+					<!-- <section>
 						<h3>Other ng new settings</h3>
 						<ul>
 							<li>--style=scss</li>
@@ -181,7 +174,7 @@ ng serve
 						<br>
 						<br>
 						<a href="https://github.com/angular/angular-cli/wiki/new">ng-new doc</a>
-					</section>
+					</section> -->
 				</section>
 				<section>
 					<section>
@@ -194,10 +187,9 @@ ng serve
 							<li>Component</li>
 							<li>Service</li>
 							<li>Load data from server</li>
-							<li>Module</li>
 							<li>Template & Data Binding</li>
 							<li>Little touch on Typescript</li>
-							<li>Little touch on ES6</li>
+							<li>ES6 import</li>
 						</ul>
 						<h4 class="fragment" style="color:red">All in one hour! Are you crazy :'(</h4>
 					</section>
@@ -339,139 +331,106 @@ import 'rxjs/add/operator/map';
 					<section>
 						<h2>Material Design</h2>
 					</section>
-					<section>
-						<ul>
-							<li>Framework used to layout the app responsively</li>
-							<li>Do not feel that you need to implement the labs with Angular Material</li>
-						</ul>
-					</section>
+					
 					<section>
 						<h2>Install Material Design</h2>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h1>Modules</h1>
-					</section>
-					<section>
 						<ul>
-							<li>central building block of Angular</li>
-							<li>helps organize code into cohesive blocks of functionality</li>
-						</ul>
-					</section>
-					<section>
-						<pre><code>
-import { NgModule } from '@angular/core';
-
-@NgModule({
-  imports: [],
-  declarations: [],
-  bootstrap: []
-})
-						</code></pre>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h1>Component Life Cycle</h1>
-					</section>
-					<section>
-						<ul>
-							<li>Allow us to perform custom logic at various stages of a component's life</li>
-							<li>Data isn't always immediately available in the constructor</li>
-							<li>Only available in TypeScript</li>
-							<li>The lifecycle interfaces are optional. We recommend adding them to benefit from TypeScript's strong typing and editor tooling</li>
-							<li>Implemented as class methods on the component class</li>
-						</ul>
-					</section>
-					<section>
-						<ul>							
-							<li>ngOnChanges - called when an input or output binding value changes</li>
-							<li>ngOnInit - after the first ngOnChanges</li>
-							<li>ngDoCheck - developer's custom change detection</li>
-							<li>ngAfterContentInit - after component content initialized</li>
-							<li>ngAfterContentChecked - after every check of component content</li>
-							<li>ngAfterViewInit - after component's view(s) are initialized</li>
-							<li>ngAfterViewChecked - after every check of a component's view(s)</li>
-							<li>ngOnDestroy - just before the directive is destroyed.</li>
+							<li>Step 1: Install Angular Material and Angular CDK</li>
+							<li>Step 2: Animations</li>
+							<li>Step 3: Import the component modules</li>
+							<li>Step 4: Include a theme</li>
 						</ul>
 					</section>
 				</section>
-
 				<section>
 					<section>
-						<h1>Pass Data to Component</h1>
+						<h2>Pass Data to Component</h2>
 					</section>
 					<section>
 						<h2>Using @Input</h2>
 						<pre><code>
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-say-hello',
-  templateUrl: './hello.component.html'
+	selector: 'app-user-card',
+	templateUrl: './user-card.component.html',
+	styleUrls: ['./user-card.component.css']
 })
-export class SayHelloComponent {
-  @Input()
-  public name: string;
+export class UserCardComponent implements OnInit {
+	
+	@Input() user;
+	constructor() { }
+
 }
 						</code></pre>
 						<pre class="fragment"><code>
-<h3 *ngIf="name">Hello {{name}}!</h3>
+<app-user-card [user]="user"></app-user-card>
 						</code></pre>
-						<pre class="fragment"><code>
-<app-say-hello name="John"></app-say-hello>
-						</code></pre>
-					</section>
-					<section>
-						<h2>@Output</h2>
-						<ul>
-							<li>A decorator used to handle "custom" events</li>
-							<li>Similar to & callback binding in AngularJS</li>
-						</ul>
-					</section>
-					<section>
-						<h2>@output</h2>
-						<pre><code>
-import { Component, EventEmitter, Output } from '@angular/core';
-
-@Component({
-  selector: 'app-dog-list',
-  templateUrl: './dog-list.component.html'
-})
-export class DogListComponent {
-  @Output()
-  public add: new EventEmitter();
-
-  @Input()
-  public dogs: IDog[] = [];
-
-  addDog(dog: IDog) {
-    this.dogs.push(dog);
-    this.add.emit(dog);
-  }
-}
-						</code></pre>
-						<pre class="fragment"><code>
-<app-dog-list [dogs]="dogs" (add)="handleDogAdd($event)"></app-dog-list>
-						</code></pre>
+						
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h1>Routing</h1>
+						<h1>Part 4</h1>
+						<h4>Bathroom break driven development</h4>
+					</section>
+					<section>
+						<img src="./images/restroom4.jpeg" alt="">
 					</section>	
+					<section>
+						<h2>3 Steps</h2>
+						<h5>Define routes: route definition</h5>
+						<pre class="hljs javascript"><code>
+import { Routes } from '@angular/router';
+
+export const appRoutes: Routes = [
+  {
+    path:'',
+    component: UsersComponent
+  },
+  {
+    path:'users',
+    component: UsersComponent
+  },
+  {
+    path:'**',
+    component: NotFoundComponent
+  }
+]
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Two more steps</h2>
+						<pre class="hljs javascript"><code>
+//app.modules.ts
+import { RouterModule} from '@angular/router';								
+
+imports:[
+  RouterModule.forRoot(appRoutes)	
+]
+						</code></pre>
+						<pre class="fragment hljs html"><code>
+<div style="text-align:center">
+  <h1>
+	Welcome to {{title}}!
+  </h1>
+</div>
+<router-outlet></router-outlet>
+						</code></pre>
+									
+					</section>
 					<section>
 						<h2>Router</h2>
 						<ul>
 							<li>Component Router</li>
 							<li>Navigating Routes</li>
 							<li>Route Parameters</li>
-							<li>Query Parameters</li>
-							<li>Child Routes</li>
+							<li>Auth guard</li>
+							<li>load Child Routes</li>
+							<li>data before navigation</li>
+							<li>lazy loading</li>
 						</ul>
 					</section>
 					<!-- <section>
@@ -590,6 +549,55 @@ export class AnotherComponent {}
 						</code></pre>
 					</section> -->
 				</section>
+				<section>
+					<section>
+						<h1>Part 5</h1>
+						<h4>Production broken driven development</h4>
+					</section>
+					<section>
+						<pre><code>
+ng lint
+ng test
+
+ng build
+ng build --prod
+ng serve --prod
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>What angular has</h2>
+					</section>
+					<section>
+						<h2>Angular has</h2>
+						<ul>
+							<li>Two step child: RxJS, typescript</li>
+							<li class="fragment">Hidding in the closet: zone.js</li>
+							<li class="fragment">Step Dad: ng-cli</li>
+							<li class="fragment">Friend: angular material</li>
+							<li class="fragment">Nerdy friend: ngrx/stores</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<img style="height:700px" src="./images/reactVsAngular.jpeg" alt="">
+				</section>
+				<section>
+						<h2>Learn react by building</h2>
+						<ul>
+							<li><a href="http://thatjsdude.com/workshops/react/mn.html">ReactJS Workshop for beginners</a></li>
+							<li>Build an <a href="https://ema-john.firebaseapp.com/">e-commerce site</a> </li>
+							<li>Email: <span style="color:lightcoral">khan4019@gmail.com</span> </li>
+						</ul>
+						<img style="height:350px;" src="./images/others/workshop1.JPG" alt="">
+					</section>
+					<section>
+						<h1>Thank you</h1>
+						<p>Email: <span style="color:lightcoral">khan4019@gmail.com</span></p>
+						<p><strong style="color:purple">@jsdude005</strong></p>
+						<p><small >www.thatJSDude.com</small></p>
+					</section>
 		</div>
 
 	</div>
